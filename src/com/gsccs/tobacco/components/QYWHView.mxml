@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx" 
+		  xmlns:utils="com.gsccs.tobacco.utils.*"
+		  width="100%" height="100%"
+		  creationComplete="creationCompleteHandler(event)"
+		  hideEffect="{hideEff}"
+		  showEffect="{showEff}"
+		  visible="true" title="企业文化"
+		  headerHeight="0"
+		  >
+	
+	<fx:Declarations>
+		<s:Parallel id="showEff">
+			<s:Rotate3D angleYFrom="-90" angleYTo="0" />
+			<s:Fade alphaFrom="0.0" alphaTo="1.0" />
+		</s:Parallel>
+		
+		<s:Parallel id="hideEff">
+			<s:Rotate3D angleYFrom="0" angleYTo="-90" />
+			<s:Fade alphaFrom="1.0" alphaTo="0.0" />
+		</s:Parallel>
+		
+		
+		<utils:XmlLoader id="whhdXmlDecoder"
+						 whhdload="xmldecoder1_qywhloadHandler(event)"/>
+		<!--解析对应xml内容，用视频时注释内容-->
+		<utils:XmlLoader id="whscXmlDecoder"
+						 whscload="xmldecoder1_whscloadHandler(event)"/>
+	</fx:Declarations>
+	
+	
+	<fx:Style source="assets/css/style.css" />
+	
+	<fx:Script>
+		<![CDATA[
+			import com.gsccs.tobacco.events.BackMainEvent;
+			import com.gsccs.tobacco.events.DataConfigEvent;
+			import com.gsccs.tobacco.utils.TxtLoader;
+			//滑动事件
+			import com.gsccs.tobacco.events.ScrollBase;
+			import flash.utils.setTimeout;
+			
+			import mx.containers.Canvas;
+			import mx.containers.TitleWindow;
+			import mx.controls.Alert;
+			import mx.controls.Image;
+			import mx.events.CloseEvent;
+			import mx.events.FlexEvent;
+			import mx.managers.PopUpManager;
+			
+			import spark.components.HGroup;
+			import spark.components.mediaClasses.VolumeBar;
+			
+			
+			private var maxImagepanel:TitleWindow;
+			
+			protected function creationCompleteHandler(event:FlexEvent):void
+			{
+				this.visible = true;
+				var screenH:Number = Capabilities.screenResolutionY;
+				var vboxH:Number = screenH*0.8;
+				imagebox.height = vboxH-50;
+			}
+			
+			
+			/**
+			 *  文化活动
+			 */
+			protected function xmldecoder1_qywhloadHandler(event:DataConfigEvent):void
+			{
+				var parwidth:Number = parent.width;
+				
+				var qywhs:Array = event.data as Array;
+				var count:int = qywhs.length;
+				var hgroup:HGroup;
+				for(var i:int = 0; i < count; i++)
+				{
+					var qywh:Object = qywhs[i];
+					var image:Image = new Image();
+					image.source = qywh.source;
+					image.width = 200;
+					image.height = 200;
+					image.addEventListener(MouseEvent.CLICK,zoomImage);
+					
+					if (i%3==0){
+						hgroup = new HGroup();
+						imagebox.addElement(hgroup);
+					}
+					hgroup.addElement(image);
+				}
+				//滑动事件
+				var testScroller:ScrollBase = new ScrollBase();
+				testScroller.init(imagebox);
+				
+			}
+			
+			
+			/**
+			 *  文化手册，使用视频时，注释此段代码
+			 */
+			
+			protected function xmldecoder1_whscloadHandler(event:DataConfigEvent):void
+			{
+				var whscs:Array = event.data as Array;
+				new TxtLoader().loadTxt(whscs[0].source, function(txt:String):void {  
+					whsc_title.text=whscs[0].title;
+					//whsc_content.htmlText = txt;
+					//txtcontent.text = txt;
+				});
+				
+			} 
+			
+			
+			
+			private function zoomImage(event:MouseEvent):void{
+				
+				maxImagepanel =new TitleWindow();
+				
+				var image:Image = event.currentTarget as Image;
+				var maxImage:Image = new Image();
+				maxImage.source = image.source;
+				
+				maxImagepanel.showCloseButton=true;
+				maxImagepanel.addEventListener(CloseEvent.CLOSE,closeWin);
+				maxImagepanel.title="文化活动";
+				maxImagepanel.setStyle("backgroundAlpha",0.5);
+				maxImagepanel.setStyle("fontSize",12);
+				
+				maxImagepanel.addChild(maxImage);
+				PopUpManager.addPopUp(maxImagepanel, this, true);
+				
+				maxImagepanel.x=Capabilities.screenResolutionX/4;  
+				maxImagepanel.y=Capabilities.screenResolutionY/20;  
+				//PopUpManager.centerPopUp(panel);
+			
+			}
+			
+			private function closeWin(event:CloseEvent):void{
+				maxImagepanel.removeAllChildren();
+				PopUpManager.removePopUp(maxImagepanel);
+			}
+			
+			
+			private function returnMain(event:MouseEvent):void{
+				this.visible = false;
+				setTimeout(wait,1000);
+			}
+			
+			private function wait():void{
+				this.dispatchEvent(new BackMainEvent(BackMainEvent.BACK_MAIN,{id:'main'}));
+			}
+		]]>
+	</fx:Script>
+	
+  <s:Group width="100%" height="100%" >
+		<s:Rect x="0" y="0" height="100%" width="100%" > 
+			<s:fill> 
+				<s:BitmapFill source="@Embed('assets/images/ycback.jpg')"/> 
+			</s:fill> 
+		</s:Rect>	
+	  <s:HGroup width="100%" height="100%" gap="0" >
+		  <s:VGroup id="leftbox" width="50%" height="100%">
+			  
+			  
+			  <mx:VBox id="textbox" width="100%" height="80%" >
+				  
+				  <mx:Text id="whsc_title" width="100%" height= "10%" styleName="whsc_title" ></mx:Text>
+				  <!--<mx:Text id="whsc_content" width="100%" styleName="whsc_text" ></mx:Text>-->
+				  
+				  
+				  <!--视频播放开始-->
+				  <s:VideoPlayer width="100%" height="75%" autoPlay="true" horizontalCenter="0"
+								 scaleMode="none" skinClass="com.gsccs.tobacco.skins.MyPlayerSkin" 
+								 source="assets/qywh/2.mp4">
+				  </s:VideoPlayer>
+				  <!--视频播放结束-->
+				  
+			  </mx:VBox>
+			  
+			  
+			  <mx:VBox width="100%" height="20%" verticalAlign="bottom"  horizontalAlign="left">
+			  	<s:Button id="downtip" label="返回" click="returnMain(event);"  
+						skinClass="com.gsccs.tobacco.skins.GlobalBackBtnSkin">
+				</s:Button>
+			  </mx:VBox>
+			  
+			  
+		  </s:VGroup>
+		  
+		  
+		  <s:VGroup id="rightbox" width="50%" height="100%" paddingLeft="10" paddingRight="10" paddingTop="10" variableRowHeight="false">
+			  <s:Scroller width="100%" height="100%">    
+				  <s:VGroup id="imagebox" width="100%" height="85%">
+				  </s:VGroup>
+			  </s:Scroller>	
+		  </s:VGroup>
+		  
+	  </s:HGroup>
+	
+  </s:Group>
+</mx:Panel>
+

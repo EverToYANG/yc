@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+		  creationComplete="creationCompleteHandler(event)"
+		  hideEffect="{wipeRightOut}"
+		  showEffect="{wipeRightIn}"
+		  visible="true" title="合理布局"
+		  headerHeight="0" xmlns:utils="com.gsccs.tobacco.utils.*">
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+		<mx:Fade id="fade"/>
+		<mx:WipeLeft id="myWipeLeft"/>
+		<mx:Dissolve id="dissolveOut" duration="1000" alphaFrom="1.0" alphaTo="0.0"/>
+		<mx:Dissolve id="dissolveIn" duration="1000" alphaFrom="0.0" alphaTo="1.0"/>
+		<mx:Fade id="fadeOut" duration="1000" alphaFrom="1.0" alphaTo="0.0"/>
+		<mx:Fade id="fadeIn" duration="1000" alphaFrom="0.0" alphaTo="1.0"/>
+		<mx:WipeRight id="wipeRightOut" duration="1000"/>
+		<mx:WipeRight id="wipeRightIn" duration="1000"/>
+		
+		
+		<utils:XmlLoader id="hlbjXmlDecoder"
+						 hlbjload="xmldecoder_hlbjloadHandler(event)"/>
+	</fx:Declarations>
+	
+	
+	<fx:Style source="assets/css/style.css" />
+	
+	
+	<fx:Script>
+		<![CDATA[
+			import com.gsccs.tobacco.events.BackMainEvent;
+			import com.gsccs.tobacco.events.DataConfigEvent;
+			import com.gsccs.tobacco.utils.TxtLoader;
+			import com.gsccs.tobacco.events.ScrollBase;
+			
+			import flash.utils.setTimeout;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.controls.Text;
+			import mx.events.FlexEvent;
+			import mx.events.ListEvent;
+			
+			
+			[Bindable]
+			private var treenodes:ArrayCollection = new ArrayCollection();
+			
+			protected function creationCompleteHandler(event:FlexEvent):void
+			{
+				this.visible = true;
+				
+				var screenH:Number = Capabilities.screenResolutionY;
+				var vboxH:Number = screenH*0.8;
+			}
+			
+			
+			/**
+			 *  
+			 */
+			protected function xmldecoder_hlbjloadHandler(event:DataConfigEvent):void
+			{
+				var hlbjs:Array = event.data as Array;
+				
+				var hlbj_content:Text = new Text();
+				hlbj_content.styleName="hlbj_text";
+				hlbj_content.percentWidth=100;
+				new TxtLoader().loadTxt(hlbjs[0].source, function(txt:String):void {  
+					hlbj_title.text=hlbjs[0].title;
+					hlbj_content.htmlText = txt;
+				});
+				
+				contentbox.addElement(hlbj_content);
+				treenodes = hlbjs[0].captions;
+				//触摸滚动
+				var testScroller:ScrollBase = new ScrollBase();
+				testScroller.init(contentbox);
+				
+				
+				
+			}
+			
+			
+			
+			private function showChapterText(id:String):void{
+				for(var i:Number=0;i<treenodes.length;i++){
+					var chapter:Object = treenodes[i];
+					var chapterid:String = chapter.id;
+					if (id == chapter.id){
+						contentbox.removeAllElements();
+						var caption_title:Text = new Text();
+						var hlbj_content:Text = new Text();
+						caption_title.styleName="hlbj_title";
+						hlbj_content.styleName="hlbj_text";
+						caption_title.width = contentbox.width;
+						hlbj_content.width = contentbox.width;
+						contentbox.addElement(caption_title);
+						contentbox.addElement(hlbj_content);
+						
+						new TxtLoader().loadTxt(chapter.source, function(txt:String):void {  
+							caption_title.text=chapter.title;
+							hlbj_content.htmlText = txt;
+						});
+						break;
+						
+					}
+				}
+				
+				
+			}
+			
+			
+			
+			private function openChapter(event:ListEvent):void{
+				var obj:Object = Tree(event.currentTarget).selectedItem;  
+				showChapterText(obj.id);
+			}
+			
+			
+			private function returnMain(event:MouseEvent):void{
+				this.visible = false;
+				setTimeout(wait,1000);
+			}
+			
+			private function wait():void{
+				this.dispatchEvent(new BackMainEvent(BackMainEvent.BACK_MAIN,{id:'main'}));
+			}
+		]]>
+	</fx:Script>
+	
+ <s:Group width="100%" height="100%" >
+		<s:Rect x="0" y="0" height="100%" width="100%" > 
+			<s:fill> 
+				<s:BitmapFill source="@Embed('assets/images/ycback.jpg')"/> 
+			</s:fill> 
+		</s:Rect>
+		
+	
+	 <s:HGroup width="100%" height="100%" gap="0" >
+		 <s:VGroup width="15%" height="100%">
+			 <s:Group width="100%" height="100%" >
+				 <s:Rect x="0" y="0" height="100%" width="100%" > 
+					 <s:fill> 
+						 <s:BitmapFill source="@Embed('assets/images/tabo.png')"/> 
+					 </s:fill> 
+				 </s:Rect>
+				 <s:VGroup  height="80%" width="100%" verticalAlign="middle">
+					 <mx:Label id="hlbj_title" color="#FFFFFF"  fontWeight="bold" fontSize="30" textAlign="center" width="80%" paddingTop="20"/>
+				 </s:VGroup>
+			 </s:Group>
+			 <s:Button id="downtip"  label="返回" click="returnMain(event);"  
+					   skinClass="com.gsccs.tobacco.skins.GlobalBackBtnSkin" horizontalCenter="100"></s:Button>
+		 </s:VGroup>
+		 
+		 
+		 <s:Group id="rightpanel" width="70%" height="100%" top="0" >
+			 <s:Rect x="0" y="0" width="100%" height="100%" > 
+				 <s:fill> 
+					 <s:BitmapFill source="@Embed('assets/images/paper.png')" fillMode="scale"/> 
+				 </s:fill> 
+			 </s:Rect>
+			 <s:Scroller width="100%" height="80%" horizontalScrollPolicy="off"> 
+				 <s:VGroup id="contentbox" width="100%" height="100%" 
+						   verticalScrollPosition="0" 
+						   paddingTop="10"
+						   paddingLeft="20" 
+						   paddingRight="20"
+						   gap="0" 
+						   top="10">
+				 </s:VGroup>
+			 </s:Scroller>
+		 </s:Group>
+		 
+		 <s:Scroller   width="15%" height="100%" verticalScrollPolicy="on" horizontalScrollPolicy="off" >
+			 <s:VGroup  id="BiaoTi" >
+			          <mx:Tree id="captiontree" width="100%" height="90%" labelField="title"    
+					  showRoot="false" dataProvider="{treenodes}" 
+					  paddingTop="15"
+					  paddingBottom="15"
+					  paddingRight="20"
+					  variableRowHeight="true"
+					  wordWrap="true"
+					  alternatingItemColors="[#FFFFFF,#EEEEEE]"
+					  showScrollTips="true"
+					  alpha="0.5"
+					  itemClick="openChapter(event)"/>
+			 </s:VGroup >
+		 </s:Scroller>
+		
+	 </s:HGroup>
+ </s:Group>	
+</mx:Panel>

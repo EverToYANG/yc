@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx" 
+		  creationComplete="creationCompleteHandler(event)"
+		  width="100%" height="100%"
+		  hideEffect="{hideEff}"
+		  showEffect="{showEff}"
+		  title="辖区简介"
+		  headerHeight="0" xmlns:utils="com.gsccs.tobacco.utils.*">
+	
+	<fx:Declarations>
+		<s:Parallel id="showEff">
+			<s:Rotate3D angleYFrom="-90" angleYTo="0" />
+			<s:Fade alphaFrom="0.0" alphaTo="1.0" />
+		</s:Parallel>
+		
+		<s:Parallel id="hideEff">
+			<s:Rotate3D angleYFrom="0" angleYTo="-90" />
+			<s:Fade alphaFrom="1.0" alphaTo="0.0" />
+		</s:Parallel>
+		
+		
+		<utils:XmlLoader id="jieshaoXmlDecoder"
+						 jieshaoload="xmldecoder_jieshaoloadHandler(event)"/>
+		
+		<utils:XmlLoader id="mapXmlDecoder"
+						 mapload="xmldecoder1_xqjjloadHandler(event)"/>
+		
+		
+	</fx:Declarations>
+	
+	
+	<fx:Style source="assets/css/style.css" />
+	
+	<fx:Script>
+		<![CDATA[
+			import com.gsccs.tobacco.events.BackMainEvent;
+			import com.gsccs.tobacco.events.DataConfigEvent;
+			//滚动
+			import com.gsccs.tobacco.events.ScrollBase;
+			import com.gsccs.tobacco.utils.TxtLoader;
+			
+			import mx.containers.TitleWindow;
+			import mx.controls.Alert;
+			import mx.controls.Image;
+			import mx.events.CloseEvent;
+			import mx.events.FlexEvent;
+			import mx.managers.PopUpManager;
+			
+			import spark.components.HGroup;
+			
+			private var maxImagepanel:TitleWindow;
+			protected function creationCompleteHandler(event:FlexEvent):void
+			{
+				this.visible = true;
+				var screenH:Number = Capabilities.screenResolutionY;
+				var vboxH:Number = screenH*0.8;
+				contentbox.height = vboxH-10;
+				
+			}
+			
+			
+			
+			
+			/**
+			 *  
+			 */
+			protected function xmldecoder1_xqjjloadHandler(event:DataConfigEvent):void
+			{
+				var parwidth:Number = parent.width;
+				var xqjjs:Array = event.data as Array;
+				var count:int = xqjjs.length;
+				var hgroup:HGroup;
+				for(var i:int = 0; i < count; i++)
+				{
+					var xqjj:Object = xqjjs[i];
+					var image:Image = new Image();
+					image.source = xqjj.source;
+					image.width = 600;
+					image.height = 400;
+					image.addEventListener(MouseEvent.CLICK,zoomImage
+					);
+					
+					if (i%3==0){
+						hgroup = new HGroup();
+						mapbox.addElement(hgroup);
+					}
+					hgroup.addElement(image);
+				}
+				
+			}
+			
+			protected function xmldecoder_jieshaoloadHandler(event:DataConfigEvent):void
+			{
+				var jieshaos:Array = event.data as Array;
+				new TxtLoader().loadTxt(jieshaos[0].source, function(txt:String):void {  
+					jieshao_title.text=jieshaos[0].title;
+					jieshao_content.htmlText = txt;
+				});
+				//触摸滚动
+				var testScroller:ScrollBase = new ScrollBase();
+				testScroller.init(textbox);
+			}
+			
+			private function zoomImage(event:MouseEvent):void{
+				
+				maxImagepanel =new TitleWindow();
+				
+				var image:Image = event.currentTarget as Image;
+				var maxImage:Image = new Image();
+				maxImage.source = image.source;
+				
+				maxImagepanel.showCloseButton=true;
+				maxImagepanel.addEventListener(CloseEvent.CLOSE,closeWin);
+				maxImagepanel.title="文化活动";
+				maxImagepanel.setStyle("backgroundAlpha",0.5);
+				maxImagepanel.setStyle("fontSize",12);
+				
+				maxImagepanel.addChild(maxImage);
+				PopUpManager.addPopUp(maxImagepanel, this, true);
+				
+				maxImagepanel.x=Capabilities.screenResolutionX/4;  
+				maxImagepanel.y=Capabilities.screenResolutionY/20;  
+				//PopUpManager.centerPopUp(panel);
+				
+			}
+			
+			private function closeWin(event:CloseEvent):void{
+				maxImagepanel.removeAllChildren();
+				PopUpManager.removePopUp(maxImagepanel);
+			}
+			
+			private function returnMain(event:MouseEvent):void{
+				
+				this.visible = false;
+				setTimeout(wait,1000);
+			}
+			
+			private function wait():void{
+				this.dispatchEvent(new BackMainEvent(BackMainEvent.BACK_MAIN,{id:'main'}));
+			}
+			
+			private function onNewsCLick(event:MouseEvent):void{
+				
+				Alert.show("2222");
+				//textbox.addEventListener(MouseEvent.CLICK,MyScrollBaseAs );
+				//this.dispatchEvent(new BackMainEvent(BackMainEvent.BACK_MAIN,{id:'main'}));
+				
+	            
+			}
+			
+		]]>
+	</fx:Script>
+	
+<s:Scroller id="Detail" width="100%" height="100%"  >
+	<s:Group width="100%" height="100%" >
+		
+		
+		
+		<s:Rect height="100%" width="100%" > 
+			<s:fill> 
+				<s:BitmapFill source="@Embed('assets/images/ycback.jpg')"/> 
+			</s:fill> 
+		</s:Rect>
+		
+		
+		<s:VGroup width="100%" height="100%">
+			<s:HGroup id="contentbox" width="100%" paddingTop="20" paddingLeft="10">
+				<s:VGroup  width="45%" height="100%">
+					<mx:VBox id="mapbox"  width="100%" height="80%">
+						<mx:Text width="100%"  height="10%"  text="大厅地址：兰州市城关区武都路260号（交警大厦西侧）">
+						</mx:Text>	
+					</mx:VBox>
+					<mx:VBox width="100%" height="20%" verticalAlign="bottom" horizontalAlign="left">
+						<s:Button id="downtip"  label="返回" click="returnMain(event);"  
+								  skinClass="com.gsccs.tobacco.skins.GlobalBackBtnSkin"
+								  ></s:Button>
+					</mx:VBox>
+				</s:VGroup>
+				
+				
+			
+				<!--<s:VGroup  id="textbox" width="50%" height="90%" click="onNewsCLick(event)"     contentBackgroundAlpha="0" borderVisible="false" verticalScrollPolicy="on" horizontalScrollPolicy="off"  >-->
+				<!--触摸滚动-->
+				<s:Scroller   width="50%" height="100%" verticalScrollPolicy="on" horizontalScrollPolicy="off" >
+					<s:VGroup  id="textbox" >
+						<mx:Text id="jieshao_title" width="100%" styleName="jieshao_title" >
+						</mx:Text>
+						<mx:Text id="jieshao_content" width="100%" styleName="jieshao_text">
+						</mx:Text>
+						
+					</s:VGroup >
+				</s:Scroller>
+				
+				
+			</s:HGroup>
+			
+			
+			
+			
+		</s:VGroup>
+	</s:Group>
+</s:Scroller>	
+</mx:Panel>
+

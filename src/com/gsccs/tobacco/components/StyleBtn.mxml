@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Application xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx" 
+		  width="100%" height="100%">
+	
+	<fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark"
+		@namespace mx "library://ns.adobe.com/flex/mx"
+		.styleBtn {
+			cornerRadius: 8;
+			textIndent: 2;
+			paddingLeft: 10;
+			paddingRight: 10;
+			paddingTop: 10;
+			paddingBottom: 10;
+			letterSpacing: 1;
+			highlightAlphas: 0.68, 0.26;
+			fillAlphas: 0.42, 0.58, 0.75, 0.65;
+			fillColors: #99cc00, #cc0000, #99cc66, #3333ff;
+			color: #000000;
+			textRollOverColor: #6666cc;
+			textSelectedColor: #66ff00;
+			borderColor: #330099;
+			themeColor: #6600ff;
+			fontFamily: Times New Roman;
+			fontSize: 12;
+			fontWeight: bold;
+			fontStyle: italic;
+			textDecoration: underline;
+		}
+	</fx:Style>	
+	<s:layout>
+		<s:BasicLayout/>
+	</s:layout>
+		<fx:Declarations>
+			
+		</fx:Declarations>
+		
+		<s:Panel width="100%" height="100%">
+			<s:Button id="btn" label="返回"/ useHandCursor="true" buttonMode="true">
+		</s:Panel>
+	
+</s:Application>

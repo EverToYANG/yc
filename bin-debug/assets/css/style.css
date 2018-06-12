@@ -1,0 +1,289 @@
+/* CSS file */
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+
+.title_1{
+	font-size:"30";
+	font-family:"微软雅黑";
+	text-align:center;
+}
+
+.title_2{
+	fontFamily:"黑体";
+	fontSize:"25";
+	text-align:left;
+}
+
+
+.title_3{
+	fontFamily:"黑体";
+	fontSize:"25";
+	text-align:center;
+}
+
+
+.content{
+	fontFamily:"宋体";
+	fontSize:"25";
+	color:#666666;
+}
+
+
+.returnButton{
+	overSkin:Embed(source="assets/images/return.png");
+	upSkin:Embed(source="assets/images/return.png");
+	downSkin:Embed(source="assets/images/return.png");
+	font-size:"20";
+	font-family:"微软雅黑"
+		
+}
+
+
+
+
+
+.problem_1{
+	fontFamily:"宋体";
+	fontSize:"30";
+	text-align:center;
+}
+
+
+.problem_2{
+	fontFamily:"黑体";
+	fontSize:"25";
+	text-align:center;
+}
+
+.text_3{
+	fontFamily:"宋体";
+	fontSize:"25";
+	color:#666666;
+	leading:30;
+}
+
+
+.text_4{
+	fontFamily:"宋体";
+	fontSize:"25";
+	color:#666666;
+	leading:25;
+}
+
+/***********************************************************/
+.yxfw_item_title{
+	font-size:"25";
+	font-family:"微软雅黑";
+	color:#666666;
+}
+
+
+.yxfw_text{
+	fontFamily:"微软雅黑";
+	fontSize:"25";
+	color:#666666;
+	leading:20;
+	padding-left:20;
+	padding-right:20;
+}
+
+
+/********************辖区简介*********************************/
+.jieshao_title{
+	font-size:"30";
+	font-family:"微软雅黑";
+	text-align:center;
+}
+
+.jieshao_text{
+	fontFamily:"宋体";
+	fontSize:"25";
+	color:#666666;
+	leading:20;
+	padding-left:20;
+	padding-right:20;
+
+}
+
+
+/************************************************************/
+.dtjj_title{
+	font-size:"30";
+	font-family:"微软雅黑";
+	text-align:center;
+}
+
+
+
+.dtjj_text{
+	fontFamily:"微软雅黑";
+	/** text-align:center; **/
+	fontSize:"25";
+	color:#666666;
+	leading:10;
+	padding-left:20;
+	padding-right:20;
+}
+
+/********************常见问题******************************/
+.cjwt_title{
+	font-size:"30";
+	font-family:"微软雅黑";
+	text-align:center;
+}
+
+.cjwt_text{
+	fontFamily:"宋体";
+	fontSize:"25";
+	color:#666666; 
+	leading:1;
+	padding-left:20;
+	padding-right:20;
+}
+
+
+
+/********************企业文化***************************************/
+.whsc_title{
+	font-size:"30";
+	font-family:"微软雅黑";
+	text-align:center;
+}
+
+.whsc_text{
+	fontFamily:"宋体";
+	fontSize:"25";
+	/** color:#666666; **/
+	color:#008d4e;
+	leading:1;
+	padding-left:20;
+	padding-right:20;
+}
+
+
+
+/******************************************/
+.layertitle{
+	overSkin:Embed(source="assets/images/menu-buted.png");
+	upSkin:Embed(source="assets/images/menu-buted.png");
+	downSkin:Embed(source="assets/images/menu-buted.png");
+	font-size:"20";
+	font-family:"微软雅黑"
+		
+}
+
+
+
+.cjwtbtn{
+	font-size:"56";
+	font-family:"微软雅黑";
+	font-weight:bold;
+
+}
+
+
+/************************************************************/
+.lawtheme{
+	padding-left:20px;
+}
+
+
+
+.law_title{
+	font-size:"30";
+	font-family:"微软雅黑";
+	text-align:center;
+}
+
+
+.law_content{
+	font-size:"25";
+	font-family:"宋体";
+	leading:10;
+	color:#666666; 
+	padding-left:20;
+	padding-right:20;
+	paragraph-space-before:1;
+	/** paragraph-start-indent:1; 
+	paragraph-end-indent:1;**/
+	paragraph-space-after:5;
+}
+
+
+/*************************公开公示*******************************/
+.gkgs_title{
+	font-size:"30";
+	font-family:"微软雅黑";
+	text-align:center;
+}
+
+
+.gkgs_text{
+	fontFamily:"宋体";
+	fontSize:"25";
+	color:#666666;
+	leading:5;
+	padding-left:20;
+	padding-right:20;
+	
+}
+
+/****************************合理布局****************************/
+.hlbj_title{
+	font-size:"30";
+	font-family:"微软雅黑";
+	text-align:center;
+}
+
+
+.hlbj_text{
+	fontFamily:"宋体";
+	fontSize:"25";
+	color:#666666;
+	leading:5;
+	padding-left:20;
+	padding-right:20;
+}
+
+
+
+/*************************************************************/
+
+.cjwtbtn{
+	overSkin:Embed(source="assets/images/cjwt1.png");
+	upSkin:Embed(source="assets/images/cjwt1.png");
+	downSkin:Embed(source="assets/images/cjwt1.png");
+	font-size:"30";
+	font-family:"微软雅黑"
+}
+
+.dtjjbtn{
+	overSkin:Embed(source="assets/images/dtjjbtn-cur.png");
+	downSkin:Embed(source="assets/images/dtjjbtn-cur.png");
+	font-size:"30";
+	font-family:"微软雅黑"
+}
+
+/**************************************************************/
+.hottext{
+	font-size:"20";
+	font-family:"微软雅黑";
+	/** color:#006a54; **/
+	color:#fff;
+	
+}
+
+.hotTel{
+	font-size:"30";
+	font-family:"黑体";
+	color:#fff;
+	font-weight:bold;
+}
+
+.hotTelNum{
+	font-size:"40";
+	font-family:"黑体";
+	color:#fff;
+	font-weight:bold;
+}

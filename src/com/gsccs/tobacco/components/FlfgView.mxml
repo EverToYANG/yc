@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:s="library://ns.adobe.com/flex/spark" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx" 
+		   xmlns:utils="com.gsccs.tobacco.utils.*"
+		   width="100%" height="100%"
+		   creationComplete="creationCompleteHandler(event)"
+		   hideEffect="{hideEff}"
+		   showEffect="{showEff}"
+		   visible="true" title="法律法规"
+		   headerHeight="0">
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+		<s:Parallel id="showEff">
+			<s:Rotate3D angleYFrom="-90" angleYTo="0" />
+			<s:Fade alphaFrom="0.0" alphaTo="1.0" />
+		</s:Parallel>
+		
+		<s:Parallel id="hideEff">
+			<s:Rotate3D angleYFrom="0" angleYTo="-90" />
+			<s:Fade alphaFrom="1.0" alphaTo="0.0" />
+		</s:Parallel>
+		
+		
+		<utils:XmlLoader id="xmlDecoder"
+						 flfgload="xmldecoder_flfgloadHandler(event)"/>
+		
+	</fx:Declarations>
+	
+
+	
+	<fx:Script>
+		<![CDATA[
+			import com.gsccs.tobacco.events.BackMainEvent;
+			import com.gsccs.tobacco.events.DataConfigEvent;
+			import com.gsccs.tobacco.events.MenuClickEvent;
+			import com.gsccs.tobacco.utils.TxtLoader;
+			import com.gsccs.tobacco.events.ScrollBase;
+			import com.supermap.web.mapping.Map;
+			
+			import flash.utils.setTimeout;
+			
+			import mx.collections.ArrayCollection;
+			import mx.containers.HBox;
+			import mx.containers.TitleWindow;
+			import mx.controls.Alert;
+			import mx.controls.Image;
+			import mx.controls.Label;
+			import mx.events.CloseEvent;
+			import mx.events.FlexEvent;
+			import mx.managers.PopUpManager;
+			
+			import spark.components.mediaClasses.VolumeBar;
+			
+			
+			private var flfgs:Array;
+			private var ismain:Boolean = true;
+			[Bindable]
+			private var treenodes:ArrayCollection = new ArrayCollection();
+			
+			protected function creationCompleteHandler(event:FlexEvent):void
+			{
+				
+				var screenH:Number = Capabilities.screenResolutionY;
+				var vboxH:Number = screenH*0.8;
+				this.visible = true;	
+			}
+			
+			
+			
+			/**
+			 *  法律法规
+			 */
+			protected function xmldecoder_flfgloadHandler(event:DataConfigEvent):void
+			{
+				flfgs = event.data as Array;
+				initFLFG();
+				var testScroller:ScrollBase = new ScrollBase();
+				testScroller.init(rightpanel);
+			}
+			private function initFLFG():void{
+				rightpanel.removeAllElements();
+				currentImg.source = null;
+				var parwidth:Number = parent.width;
+				var count:int = flfgs.length;
+				var hgroup:HGroup;
+				
+				for(var i:int = 0; i < count; i++)
+				{
+					var flfg:Object = flfgs[i];
+					//缩略图
+					var theme:Image = new Image();
+					theme.id = flfg.id;
+					theme.name = flfg.id;
+					theme.source="assets/flfg/images/"+flfg.id+".jpg";
+					theme.width=200;
+					theme.height =300; 
+					theme.rotation = 15;
+					
+					if (i%4 == 0){
+						hgroup = new HGroup();
+						hgroup.width = 200;
+						hgroup.gap = 20;
+						hgroup.styleName="lawtheme";
+						rightpanel.addElement(hgroup);
+					}
+					
+					theme.addEventListener(MouseEvent.CLICK,changeShowTxt);
+					hgroup.addElement(theme);
+				}
+			}
+			
+			
+			private function changeShowTxt(event:MouseEvent):void{
+				
+				rightpanel.removeAllElements();
+				var currImg:Image = event.currentTarget as Image;
+				var id:String = currImg.id;
+				var count:int = flfgs.length;
+				for(var i:int = 0; i < count; i++)
+				{   
+					if(id==flfgs[i].id){
+						var flfgInfo:FlfgInfoView = new FlfgInfoView();
+						flfgInfo.flfgObj = flfgs[i];
+						rightpanel.addElement(flfgInfo);
+						break;
+					}
+				}
+				currentImg.source = currImg.source;
+				ismain = false;
+			}
+			
+			
+			private function returnMain(event:MouseEvent):void{
+				if (ismain){
+					this.visible = false;
+					setTimeout(wait,1000);
+				}else{
+					initFLFG();
+					ismain = true;
+					
+				}
+			}
+			
+			
+			private function wait():void{
+				this.dispatchEvent(new BackMainEvent(BackMainEvent.BACK_MAIN,{id:'main'}));
+			}
+		]]>
+	</fx:Script>
+	
+	<s:Group width="100%" height="100%" >
+		
+		<s:Rect x="0" y="0" height="100%" width="100%" > 
+			<s:fill> 
+				<s:BitmapFill source="@Embed('assets/images/ycback.jpg')"/> 
+			</s:fill> 
+		</s:Rect>
+		
+		
+		<s:HGroup width="100%" height="100%" gap="0" >
+			
+			<s:VGroup width="15%" height="100%" paddingTop="30">
+				<mx:VBox id="leftmenu" height="80%" width="100%" >
+					<mx:Image id="currentImg" source="" width="200" height="80%" >
+						<mx:filters>
+							<mx:DropShadowFilter blurX="4.00" blurY="100.00"/>
+						</mx:filters>
+					</mx:Image>
+				</mx:VBox>
+				<mx:VBox width="100%" height="20%" verticalAlign="bottom"  horizontalAlign="left">
+					<s:Button id="downtip" label="返回" click="returnMain(event);"  
+							  skinClass="com.gsccs.tobacco.skins.GlobalBackBtnSkin"
+							  >
+					</s:Button>
+				</mx:VBox>
+			</s:VGroup>
+			<s:Scroller width="85%" height="100%"> 
+				<s:VGroup id="rightpanel" width="100%" height="100%" top="0">
+					
+				</s:VGroup>
+			</s:Scroller>
+		</s:HGroup>
+	</s:Group>
+	
+</mx:Panel>

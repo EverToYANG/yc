@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+		  creationComplete="creationCompleteHandler(event)"
+		  hideEffect="{wipeRightOut}"
+		  showEffect="{wipeRightIn}"
+		  visible="true" title="卷烟价格目录"
+		  headerHeight="0" xmlns:utils="com.gsccs.tobacco.utils.*">
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+		<mx:WipeRight id="wipeRightOut" duration="1000"/>
+		<mx:WipeRight id="wipeRightIn" duration="1000"/>
+		
+	</fx:Declarations>
+	
+	
+	<fx:Script>
+		<![CDATA[
+			import com.gsccs.tobacco.events.BackMainEvent;
+			import com.gsccs.tobacco.events.DataConfigEvent;
+			
+			import flash.utils.setTimeout;
+			
+			import mx.collections.ArrayCollection;
+			import mx.events.FlexEvent;
+			
+			[Bindable]
+			public var jyjgItems:ArrayCollection;
+			
+			protected function creationCompleteHandler(event:FlexEvent):void
+			{
+				this.visible = true;
+			}
+			
+		]]>
+	</fx:Script>
+	
+	<mx:DataGrid id="tobaccoGrid" verticalScrollPolicy="on" horizontalScrollPolicy="off" width="100%" 
+				 rowHeight="180" height="98%" dataProvider="{jyjgItems}"
+				 wordWrap="true">
+		<mx:columns >
+			
+			<mx:DataGridColumn headerText="卷烟价额目录" dataField="source" textAlign="center" fontSize="25" >
+				<mx:itemRenderer>
+					<fx:Component>
+						<mx:HBox height="180" width="100" 
+								 horizontalAlign="center" 
+								 verticalAlign="middle"
+								 verticalScrollPolicy="off" 
+								 horizontalScrollPolicy="off">
+							<mx:Image height="180" width="100" source="{getImage(data)}">
+								<fx:Script>
+									<![CDATA[
+										import mx.controls.Alert;
+										public function getImage(data:Object):Object{
+											return data.source;
+										}
+									]]>
+								</fx:Script>
+							</mx:Image>
+						</mx:HBox>
+						
+						<!--</mx:HBox>-->	
+					</fx:Component>
+				</mx:itemRenderer>
+			</mx:DataGridColumn>
+			
+			
+			<mx:DataGridColumn headerText="生产企业名称" dataField="title" fontSize="25"/>
+			<mx:DataGridColumn headerText="卷烟规格名称" dataField="spec" fontSize="25"/>
+			<mx:DataGridColumn headerText="条包条形码" dataField="barcode" fontSize="25" minWidth="100"/>
+			<mx:DataGridColumn headerText="类别" dataField="type" textAlign="center" fontSize="25"/>
+			<mx:DataGridColumn headerText="全国统一批发价" dataField="pfprice" fontSize="25"/>
+			<mx:DataGridColumn headerText="全省零售指导价" dataField="lsprice" fontSize="25"/>	
+			
+		</mx:columns>
+	</mx:DataGrid>
+	
+</mx:Panel>

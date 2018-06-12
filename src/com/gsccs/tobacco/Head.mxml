@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 creationComplete="application1_creationCompleteHandler(event)"
+		 xmlns:components="com.gsccs.tobacco.components.*" 
+		 width="100%" height="100%"
+		 alpha="1">
+	
+	<!--<s:layout>
+		<s:BasicLayout clipAndEnableScrolling="true"/>
+	</s:layout>-->
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.gsccs.tobacco.skins.HeaderbarSkin;
+			
+			import mx.collections.ArrayCollection;
+			import mx.core.FlexGlobals;
+			import mx.events.FlexEvent;
+			import mx.events.ResizeEvent;
+			
+			import spark.components.BorderContainer;
+			import spark.components.NavigatorContent;
+			import spark.components.Scroller;
+			import spark.components.TitleWindow;
+			
+			
+			private var mapPanel:*;
+			
+			protected function application1_creationCompleteHandler(event:FlexEvent):void
+			{
+				
+			}
+		]]>
+	</fx:Script>
+	
+	<!---->
+	<s:Rect alpha="1" width="100%" height="100%" >
+		<s:fill>
+			<s:LinearGradient x="600" y="47" scaleX="46.9995" rotation="270">
+				<s:GradientEntry ratio="1" color="#006a54"/>
+			</s:LinearGradient>
+			
+		</s:fill>
+	</s:Rect>
+	
+	
+	<s:HGroup width="50%" height="100%" paddingLeft="50"  verticalCenter="0" verticalAlign="middle" >
+		<mx:Image source="assets/images/logo.png"/>	
+	</s:HGroup>
+	
+	<s:VGroup width="50%" height="100%"  right="10"  verticalCenter="0" verticalAlign="middle" horizontalAlign="center">
+		<mx:Image source="assets/images/title.png"/>
+	</s:VGroup>
+	
+</s:Group>

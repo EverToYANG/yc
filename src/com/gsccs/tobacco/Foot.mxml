@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 creationComplete="application1_creationCompleteHandler(event)"
+		 xmlns:components="com.gsccs.tobacco.components.*" 
+		 width="100%" 
+		 height="60" xmlns:utils="com.gsccs.tobacco.utils.*"
+		 alpha="0.5">
+	
+	
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+		<mx:Move id="move_up" target="{hottext}" />
+		
+		<utils:XmlLoader id="xmlDecoder"
+						 footload="xmldecoder_footloadHandler(event)"/>
+	</fx:Declarations>
+	
+	
+	<fx:Style source="assets/css/style.css" />
+	
+	<fx:Script>
+		<![CDATA[
+			import com.gsccs.tobacco.events.DataConfigEvent;
+			import com.gsccs.tobacco.skins.HeaderbarSkin;
+			import com.gsccs.tobacco.utils.TxtLoader;
+			
+			import mx.collections.ArrayCollection;
+			import mx.core.FlexGlobals;
+			import mx.events.FlexEvent;
+			import mx.events.ResizeEvent;
+			
+			import spark.components.BorderContainer;
+			import spark.components.NavigatorContent;
+			import spark.components.Scroller;
+			import spark.components.TitleWindow;
+			
+			
+			private var mapPanel:*;
+			
+			protected function application1_creationCompleteHandler(event:FlexEvent):void
+			{
+				//move_up.yFrom = cs.height - 6;  
+				//move_up.yTo = 0 - hottext.height + 6;
+				//move_up.repeatCount = 0; //loop
+				//move_up.repeatDelay = 0; //loop time
+				//move_up.duration = 6000; //the time of scroll once
+				//move_up.play();
+				
+				
+				move_up.xFrom = cs.width - 6;  
+				move_up.xTo = 0 - hottext.width + 6;
+				move_up.repeatCount = 0; //loop
+				move_up.repeatDelay = 0; //loop time
+				move_up.duration = 62000; //the time of scroll once
+				move_up.play();
+				
+				
+			}
+			
+			private function move_pause():void
+			{
+				move_up.pause(); //pause
+			}
+			
+			private function move_resume():void
+			{
+				move_up.resume(); //start from the pause position
+			}
+			
+			
+			/**
+			 *  
+			 */
+			protected function xmldecoder_footloadHandler(event:DataConfigEvent):void
+			{
+				var foots:Array = event.data as Array;
+				new TxtLoader().loadTxt(foots[0].source, function(txt:String):void {  
+					hottext.text=txt;
+				});
+				
+			}
+		]]>
+	</fx:Script>
+	
+	
+	<s:Rect alpha="1" width="100%" height="100%" >
+		<s:fill>
+			<s:LinearGradient x="600" y="47" scaleX="46.9995" rotation="270">
+				<s:GradientEntry ratio="0" color="#262626"/>
+				<!--<s:GradientEntry ratio="1" color="#FF8000"/>-->
+			</s:LinearGradient>
+			
+		</s:fill>
+	</s:Rect>
+	
+	<s:HGroup width="100%" height="100%" paddingLeft="50"
+			  paddingRight="50"
+			  verticalCenter="0" verticalAlign="middle" >
+		<mx:Canvas id="cs" width="100%" height="100%" left="0" top="0"
+				   horizontalScrollPolicy="off"
+				   verticalScrollPolicy="off" mouseOver="move_pause()" mouseOut="move_resume()">
+			<mx:Label id="hottext" width="94%" horizontalCenter="0" 
+					  verticalCenter="0" 
+					  styleName="hottext">
+			</mx:Label>
+		</mx:Canvas>
+	</s:HGroup>
+	<!--
+	<s:HGroup width="30%" height="100%"  right="10"  verticalCenter="0" verticalAlign="middle" >
+		<mx:Label text="热线电话：" styleName="hotTel">
+		</mx:Label>
+		<mx:Label text="12313" styleName="hotTelNum">
+		</mx:Label>
+	</s:HGroup>
+	-->
+	
+</s:Group>

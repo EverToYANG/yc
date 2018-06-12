@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%"
+		  creationComplete="creationCompleteHandler(event)"
+		  hideEffect="{irisOut}"
+		  showEffect="{irisIn}"
+		  visible="true" title="烟草专卖常见问题30问"
+		  headerHeight="0" 
+		  xmlns:utils="com.gsccs.tobacco.utils.*">
+	
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+		<mx:Fade id="fade"/>
+		<mx:WipeLeft id="myWipeLeft"/>
+		<!--虹效果 -->
+		<mx:Iris id="irisOut" duration="1000" showTarget="true"/>
+		<mx:Iris id="irisIn" duration="1000" showTarget="false"/>
+		
+		
+		<utils:XmlLoader id="xmlDecoder"
+						 cjwtload="xmldecoder_cjwtloadHandler(event)"/>
+		
+	</fx:Declarations>
+	
+	<fx:Style source="assets/css/style.css" />
+	
+	
+	<fx:Script>
+		<![CDATA[
+			import com.gsccs.tobacco.events.BackMainEvent;
+			import com.gsccs.tobacco.events.DataConfigEvent;
+			import com.gsccs.tobacco.skins.MyPanelSkin;
+			import com.gsccs.tobacco.utils.TxtLoader;
+			//滚动
+			import com.gsccs.tobacco.events.ScrollBase;
+			
+			import flash.utils.setTimeout;
+			
+			import mx.containers.HBox;
+			import mx.controls.Alert;
+			import mx.controls.Label;
+			import mx.controls.Text;
+			import mx.events.FlexEvent;
+			import mx.managers.PopUpManager;
+			
+			import spark.components.Panel;
+			
+			private var cjwts:Array;
+			private var ismain:Boolean = true;
+			protected function creationCompleteHandler(event:FlexEvent):void
+			{
+				this.visible = true;	
+				var screenH:Number = Capabilities.screenResolutionY;
+				//var vboxH:Number = screenH*0.8;
+				//cjwtbox.height = vboxH-50;
+			}
+			
+			
+			
+			/**
+			 *  
+			 */
+			protected function xmldecoder_cjwtloadHandler(event:DataConfigEvent):void
+			{
+				cjwts = event.data as Array;
+				initCJWT();
+				//触摸滚动
+				var testScroller:ScrollBase = new ScrollBase();
+				testScroller.init(cjwtbox);
+			}
+			
+			private function initCJWT():void{
+				cjwtbox.removeAllElements();
+				var count:int = cjwts.length;
+				var hbox:HBox;
+				for(var i:int = 0; i < count; i++)
+				{
+					var cjwt:Object = cjwts[i];
+					var titleBut:CjwtBtn = new CjwtBtn();
+					titleBut.label = cjwt.title;
+					titleBut.id = cjwt.id;
+					titleBut.name = cjwt.id;
+					
+					titleBut.width=cjwt.width;
+					titleBut.height=cjwt.height;
+					
+					titleBut.imgwidth = cjwt.width;
+					titleBut.imgheight = cjwt.height;
+					//titleBut.styleName="cjwtbtn";
+					//.className="cjwtbtn";
+					titleBut.imageURL = cjwt.imgbtn;
+					titleBut.addEventListener(MouseEvent.CLICK,showpanel);
+					
+					
+					if (i%3==0){
+						hbox = new HBox();
+						cjwtbox.addElement(hbox);
+					}
+					hbox.addElement(titleBut);
+				}
+			}
+			
+			
+			
+			
+			private function showpanel(event:MouseEvent):void{
+				var id:String =(event.currentTarget as Button).id;
+				var count:int = cjwts.length;
+				var cjwt:Object = cjwts[i];
+				for(var i:int = 0; i < count; i++)
+				{   
+					
+					if(id==cjwts[i].id){
+						showContent(cjwts[i]);
+						break;
+						//PopUpManager.addPopUp(faqPanel, this, true);
+						//faqPanel.x=Capabilities.screenResolutionX/4;  
+						//faqPanel.y=Capabilities.screenResolutionY/20;  
+					}
+				}
+				ismain = false;
+				
+			}
+			
+			
+			private function showContent(cjwt:Object):void{
+				cjwtbox.removeAllElements();
+				
+				
+				var title:Text = new Text();
+				title.styleName="cjwt_title";
+				title.text=cjwt.title;
+				title.width = cjwtbox.width-50;
+				cjwtbox.addElement(title);
+				
+				var content:Text = new Text();
+				content.styleName="cjwt_text";
+				content.width = cjwtbox.width;
+				new TxtLoader().loadTxt(cjwt.source, function(txt:String):void {  
+					content.htmlText = txt;
+				});
+				cjwtbox.addElement(content);
+			}
+			
+			
+			private function returnMain(event:MouseEvent):void{
+				if (ismain){
+					this.visible = false;
+					setTimeout(wait,1000);
+				}else{
+					initCJWT();
+					ismain = true;
+				}
+			}
+			
+			private function wait():void{
+				this.dispatchEvent(new BackMainEvent(BackMainEvent.BACK_MAIN,{id:'main'}));
+			}
+		]]>
+	</fx:Script>
+	
+	<s:Group width="100%" height="100%">
+		
+		<s:Rect x="0" y="0" height="100%" width="100%"> 
+			<s:fill> 
+				<s:BitmapFill source="@Embed('assets/images/cjwt.jpg')"/> 
+			</s:fill> 
+		</s:Rect>
+		
+		
+		<s:HGroup width="100%" height="100%" gap="0" >
+			
+			<s:VGroup width="15%" height="100%" verticalAlign="bottom">
+				<s:Button id="downtip"  label="返回" click="returnMain(event);"  
+						  skinClass="com.gsccs.tobacco.skins.GlobalBackBtnSkin">
+				</s:Button>
+			</s:VGroup>
+			<s:Scroller width="100%" height="100%"> 
+				<s:VGroup id="cjwtbox" width="100%" height="40%" verticalAlign="middle" horizontalAlign="center">
+					
+				</s:VGroup>
+			</s:Scroller>
+		</s:HGroup>
+		
+		
+	</s:Group>
+	
+</mx:Panel>
+

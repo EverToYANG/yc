@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mx:Panel xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		  xmlns:s="library://ns.adobe.com/flex/spark" 
+		  xmlns:mx="library://ns.adobe.com/flex/mx" 
+		  creationComplete="creationCompleteHandler(event)"
+		  hideEffect="{irisOut}"
+		  showEffect="{irisIn}"
+		  width="100%" height="100%"
+		  title="大厅简介"
+		  headerHeight="0"
+		  opaqueBackground="null" 
+		  xmlns:utils="com.gsccs.tobacco.utils.*"
+		  xmlns:comps="com.gsccs.tobacco.components.*">
+	
+	<fx:Declarations>
+		<!--虹效果 -->
+		<mx:Iris id="irisOut" duration="1000" showTarget="true"/>
+		<mx:Iris id="irisIn" duration="1000" showTarget="false"/>
+		
+		
+		<utils:XmlLoader id="dtjjXmlDecoder"
+						 dtjjload="xmldecoder_dtjjloadHandler(event)"/>
+	</fx:Declarations>
+	
+	
+	<fx:Style source="assets/css/style.css" />
+	
+	
+	<fx:Script>
+		<![CDATA[
+			import com.gsccs.tobacco.events.BackMainEvent;
+			import com.gsccs.tobacco.events.DataConfigEvent;
+			import com.gsccs.tobacco.utils.TxtLoader;
+			
+			import mx.controls.Alert;
+			import mx.controls.Image;
+			import mx.controls.Text;
+			import mx.events.FlexEvent;
+			
+			import spark.components.mediaClasses.VolumeBar;
+			
+			private var dtjjs:Array;
+			protected function creationCompleteHandler(event:FlexEvent):void
+			{
+				var screenH:Number = Capabilities.screenResolutionY;
+				var vboxH:Number = screenH*0.8;
+				this.visible = true;	
+				showContent(dtjjs[0].items[0]);
+			}
+			
+			
+			/**
+			 *  
+			 */
+			protected function xmldecoder_dtjjloadHandler(event:DataConfigEvent):void
+			{
+				dtjjs = event.data as Array;
+				if (dtjjs){
+					var items:Array = dtjjs[0].items;
+					var count:int = items.length;
+					
+					var screenH:Number = Capabilities.screenResolutionY;
+					var btnwidth:Number = screenH/count;
+					
+					for(var i:int = 0; i < count; i++)
+					{
+						
+						var item:Object = items[i];
+						var titleBut:DTJJBtn = new DTJJBtn();
+						titleBut.label = item.title;
+						titleBut.id = item.id;
+						titleBut.name = item.id;
+						
+						//titleBut.width=50;
+						//titleBut.height=50;
+						
+						//titleBut.imgwidth = 100;
+						//titleBut.imgheight = 100;
+						
+						titleBut.width=btnwidth;
+						titleBut.height=btnwidth;
+						
+						titleBut.imgwidth = btnwidth;
+						titleBut.imgheight = btnwidth;
+						
+						titleBut.imageURL = "assets/images/dtjjbtn.png";
+						titleBut.styleName = "dtjjbtn";
+						titleBut.addEventListener(MouseEvent.CLICK,click_btn);
+						btnbox.addElement(titleBut);
+						
+					}
+					
+				}
+			}
+			
+			
+			private function click_btn(event:MouseEvent):void{
+				var targetBtn:DTJJBtn = event.currentTarget as DTJJBtn;
+				var id:String = targetBtn.id;
+				
+				var items:Array = dtjjs[0].items;
+				var count:int = items.length;
+				for(var i:int = 0; i < count; i++)
+				{   
+					if(id==items[i].id){
+						showContent(items[i]);
+						break;
+					}
+				}
+				
+			}
+			
+			
+			private function showContent(item:Object):void{
+				contentbox.removeAllElements();
+				var law_title:Text = new Text();
+				law_title.styleName="dtjj_title";
+				law_title.width = contentbox.width-50;
+				law_title.text=item.title;
+				contentbox.addElement(law_title);
+				
+				if (item.type=="text"){
+					var content:Text = new Text();
+					content.styleName="dtjj_text";
+					content.width = contentbox.width-50;
+					new TxtLoader().loadTxt(item.source, function(txt:String):void {  
+						content.htmlText = txt;
+					});
+					contentbox.addElement(content);
+				}else if(item.type=="image"){
+					var img:Image = new Image();
+					img.source = item.source;
+					img.height = contentbox.height-50;
+					contentbox.addElement(img);
+				}
+			
+			}
+			
+			
+			private function returnMain(event:MouseEvent):void{
+				this.dispatchEvent(new BackMainEvent(BackMainEvent.BACK_MAIN,{id:'main'}));
+			}
+		]]>
+	</fx:Script>
+	
+	
+	
+	<s:Group width="100%" height="100%" >
+		<s:Rect x="0" y="0" height="100%" width="100%" > 
+			<s:fill> 
+				<s:BitmapFill source="@Embed('assets/images/ycback_flower.jpg')"/>
+			</s:fill> 
+		</s:Rect>
+		
+		<s:HGroup width="100%" height="100%" gap="0" >
+			
+			<s:VGroup width="15%" height="100%" paddingTop="20" >
+				<mx:VBox id="leftmenu" height="90%"></mx:VBox>
+				
+				<s:Button id="downtip"  label="返回" click="returnMain(event);"  
+						  skinClass="com.gsccs.tobacco.skins.GlobalBackBtnSkin"
+						  ></s:Button>
+			</s:VGroup>
+			
+			<s:VGroup id="rightpanel" width="85%"  height="100%" paddingLeft="200" paddingRight="50">
+				<mx:VBox id="contentbox" width="100%" height="70%"  horizontalAlign="center" paddingTop="20" >
+					
+				</mx:VBox>
+				
+				<s:HGroup id="btnbox" width="100%" height="25%" gap="20" >
+					
+				</s:HGroup>
+				
+			</s:VGroup>
+			
+		</s:HGroup>
+		
+	</s:Group>
+	
+</mx:Panel>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:VGroup xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 creationComplete="mainview_creationCompleteHandler(event)"
+		 xmlns:tobacco="com.gsccs.tobacco.*"
+		 width="100%" height="100%"
+		 hideEffect="{fadeOut}"
+		 showEffect="{fadeIn}"
+		 gap="0">
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+		<mx:Fade id="fadeOut" duration="1000" alphaFrom="1.0" alphaTo="0.0"/>
+		<mx:Fade id="fadeIn" duration="1000" alphaFrom="0.0" alphaTo="1.0"/>
+		<mx:WipeRight id="wipeRightOut" duration="1000"/>
+		<mx:WipeRight id="wipeRightIn" duration="1000"/>
+		<mx:Glow id="glow" duration="1000" alphaFrom="1.0" alphaTo="0.3" blurXFrom="0.0" blurXTo="50.0" blurYFrom="0.0" blurYTo="50.0" color="0x00FF00"/>
+	</fx:Declarations>
+	
+	
+	<fx:Style>
+		@namespace s "library://ns.adobe.com/flex/spark";
+		@namespace mx "library://ns.adobe.com/flex/mx";
+		@namespace components "com.gsccs.tobacco.components.*";
+		
+		.menuButton{
+			overSkin:Embed(source="assets/images/menu-but.png");
+			upSkin:Embed(source="assets/images/menu-buted.png");
+			downSkin:Embed(source="assets/images/menu-buted.png");
+			font-size:"20";
+			font-family:"微软雅黑";
+			text-align:left;
+			padding-left:15;
+			color:#046C53;
+			font-weight:bold;
+				
+		}
+	</fx:Style>
+	
+	
+	<fx:Script>
+		<![CDATA[
+			import com.gsccs.tobacco.events.BackMainEvent;
+			import com.gsccs.tobacco.events.MenuClickEvent;
+			import com.gsccs.tobacco.skins.HeaderbarSkin;
+			
+			import mx.collections.ArrayCollection;
+			import mx.controls.Alert;
+			import mx.core.FlexGlobals;
+			import mx.events.FlexEvent;
+			import mx.events.ResizeEvent;
+			
+			import spark.components.BorderContainer;
+			import spark.components.NavigatorContent;
+			import spark.components.Scroller;
+			import spark.components.TitleWindow;
+			
+			
+			private var mapPanel:*;
+			
+			protected function mainview_creationCompleteHandler(event:FlexEvent):void
+			{
+				dtjj.visible = true;
+				xqjj.visible = true;
+				
+				hlbj.visible = true;
+				gkgs.visible = true;
+				
+				flfg.visible = true;
+				yxfw.visible = true;
+				
+				qywh.visible = true;
+				cjwt.visible = true;
+				
+			}
+			
+			
+			
+			private function openXQJJ(event:MouseEvent):void{
+				this.dispatchEvent(new MenuClickEvent(MenuClickEvent.MENU_CLICK,{id:'xqjj'}));
+			}
+			
+			private function openDTJJ(event:MouseEvent):void{
+				this.dispatchEvent(new MenuClickEvent(MenuClickEvent.MENU_CLICK,{id:'dtjj'}));
+			}
+			
+			private function openHLBJ(event:MouseEvent):void{
+				this.dispatchEvent(new MenuClickEvent(MenuClickEvent.MENU_CLICK,{id:'hlbj'}));
+			}
+			
+			private function openGKGS(event:MouseEvent):void{
+				this.dispatchEvent(new MenuClickEvent(MenuClickEvent.MENU_CLICK,{id:'gkgs'}));
+			}
+			
+			private function openFLFG(event:MouseEvent):void{
+				this.dispatchEvent(new MenuClickEvent(MenuClickEvent.MENU_CLICK,{id:'flfg'}));
+			}
+			
+			private function openYXFW(event:MouseEvent):void{
+				this.dispatchEvent(new MenuClickEvent(MenuClickEvent.MENU_CLICK,{id:'yxfw'}));
+			}
+			private function openQYWH(event:MouseEvent):void{
+				this.dispatchEvent(new MenuClickEvent(MenuClickEvent.MENU_CLICK,{id:'qywh'}));
+			}
+			private function openCJWT(event:MouseEvent):void{
+				this.dispatchEvent(new MenuClickEvent(MenuClickEvent.MENU_CLICK,{id:'cjwt'}));
+			}
+			
+		]]>
+	</fx:Script>
+	
+	
+	<s:HGroup width="100%" height="100%" verticalCenter="0" verticalAlign="middle" gap="0">
+		<mx:Image source="assets/images/xingxiang.png" height="100%" width="50%" />
+		<s:VGroup width="50%" height="100%"  right="50" verticalCenter="0" verticalAlign="middle" gap="20">
+			<s:HGroup gap="100" >
+				<mx:Button id="xqjj" name="button" width="260" height="80" label="大厅简介" styleName="menuButton" useHandCursor="true" buttonMode="true" click="openXQJJ(event);" hideEffect="{wipeRightOut}" showEffect="{wipeRightIn}" visible="false"> </mx:Button>
+				<mx:Button id="dtjj" name="button" width="260" height="80" label="辖区简介" styleName="menuButton" useHandCursor="true" buttonMode="true" click="openDTJJ(event);" hideEffect="{wipeRightOut}" showEffect="{wipeRightIn}" visible="false"> </mx:Button>
+			</s:HGroup>
+			<s:HGroup gap="100" >
+				<mx:Button id="hlbj" name="button" width="260" height="80" label="合理布局" styleName="menuButton" useHandCursor="true" buttonMode="true" click="openHLBJ(event);" hideEffect="{wipeRightOut}" showEffect="{wipeRightIn}" visible="false"> </mx:Button>
+				<mx:Button id="gkgs" name="button" width="260" height="80" label="公开公示" styleName="menuButton" useHandCursor="true" buttonMode="true" click="openGKGS(event);" hideEffect="{wipeRightOut}" showEffect="{wipeRightIn}" visible="false"> </mx:Button>
+			</s:HGroup>
+			<s:HGroup gap="100" >
+				<mx:Button id="flfg" name="button" width="260" height="80" label="法律法规" styleName="menuButton" useHandCursor="true" buttonMode="true" click="openFLFG(event);" hideEffect="{wipeRightOut}" showEffect="{wipeRightIn}" visible="false"> </mx:Button>
+				<mx:Button id="yxfw" name="button" width="260" height="80" label="营销服务" styleName="menuButton" useHandCursor="true" buttonMode="true" click="openYXFW(event);" hideEffect="{wipeRightOut}" showEffect="{wipeRightIn}" visible="false"> </mx:Button>
+			</s:HGroup>
+			<s:HGroup  gap="100" >
+				<mx:Button id="qywh" name="button" width="260" height="80" label="企业文化" styleName="menuButton" useHandCursor="true" buttonMode="true" click="openQYWH(event);" hideEffect="{wipeRightOut}" showEffect="{wipeRightIn}" visible="false"> </mx:Button>
+				<mx:Button id="cjwt" name="button" width="260" height="80" label="常见问题" styleName="menuButton" useHandCursor="true" buttonMode="true" click="openCJWT(event);" hideEffect="{wipeRightOut}" showEffect="{wipeRightIn}" visible="false"> </mx:Button>
+			</s:HGroup>
+		</s:VGroup>
+	</s:HGroup>
+	
+	<tobacco:Foot id="main" width="100%"/>
+	
+</s:VGroup>

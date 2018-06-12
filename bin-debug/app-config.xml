@@ -1,0 +1,470 @@
+﻿<?xml version="1.0"?>
+<configuration>
+	
+	<!--底脚滚动信息-->
+	<foot title="滚动信息"  source="assets/foot/01.txt" describe="">
+	</foot>
+	
+	<!--大厅简介-->
+	<dtjj title="大厅简介"  source="assets/xqjj/01.txt" describe="">
+		<item id="dtjj01" title="工作职能" type="text" source="assets/dtjj/01.txt" />
+		<item id="dtjj02" title="工作人员" type="image" source="assets/dtjj/01.png" />
+		<item id="dtjj03" title="服务宗旨" type="text" source="assets/dtjj/03.txt" />
+		<item id="dtjj04" title="服务承诺" type="text" source="assets/dtjj/04.txt" />
+		<item id="dtjj05" title="服务标准" type="text" source="assets/dtjj/05.txt" />
+		<item id="dtjj06" title="工作目标" type="text" source="assets/dtjj/06.txt" />
+		<item id="dtjj07" title="服务监督" type="text" source="assets/dtjj/07.txt" />
+	</dtjj>
+	
+	
+	<!--辖区简介-->
+	<jieshao id="jieshao_01" title=""  source="assets/xqjj/01.txt" describe=""/>
+	<jieshao id="jieshao_02" title=""  source="assets/txt/1.txt" describe=""/>
+	<map id="1" thumb="assets/images/1.jpg" source="assets/images/1.jpg" title="" describe=""/>
+	
+	
+	<!--企业文化手册 -->
+	<whsc id="whsc" title="企业文化手册"style="textalign:center;" source="assets/qywh/whsc.txt" />
+	
+	<!--企业文化-->
+	<whhd id="1" thumb="assets/qywh/1_s120_75.jpg" source="assets/qywh/1.jpg" title="" describe=""/>
+	<whhd id="2" thumb="assets/qywh/2_s120_75.jpg" source="assets/qywh/2.jpg" title="" describe=""/>
+	<whhd id="3" thumb="assets/qywh/3_s120_75.jpg" source="assets/qywh/3.jpg" title="" describe=""/>
+	<whhd id="4" thumb="assets/qywh/4_s120_75.jpg" source="assets/qywh/4.jpg" title="" describe=""/>
+	<whhd id="5" thumb="assets/qywh/5_s120_75.jpg" source="assets/qywh/5.jpg" title="" describe=""/>
+	<whhd id="6" thumb="assets/qywh/6_s120_75.jpg" source="assets/qywh/6.jpg" title="" describe=""/>
+	<whhd id="7" thumb="assets/qywh/7_s120_75.jpg" source="assets/qywh/7.jpg" title="" describe=""/>
+	<whhd id="8" thumb="assets/qywh/8_s120_75.jpg" source="assets/qywh/8.jpg" title="" describe=""/>
+	<whhd id="9" thumb="assets/qywh/9_s120_75.jpg" source="assets/qywh/9.jpg" title="" describe=""/>
+	<whhd id="10" thumb="assets/qywh/10_s120_75.jpg" source="assets/qywh/10.jpg" title="" describe=""/>
+	<whhd id="11" thumb="assets/qywh/11_s120_75.jpg" source="assets/qywh/11.jpg" title="" describe=""/>
+	<whhd id="12" thumb="assets/qywh/12_s120_75.jpg" source="assets/qywh/12.jpg" title="" describe=""/>
+	<!--法律法规-->
+	<flfg id="flfg_01" title="中华人民共和国烟草专卖法" 	source="assets/flfg/txt/01.txt">
+		<caption id="c01" title="第一章 总 则" 			source="assets/flfg/txt/01_01.txt"/>
+		<caption id="c02" title="第二章 烟叶的种植、收购和调拨" source="assets/flfg/txt/01_02.txt"/>
+		<caption id="c03" title="第三章 烟草制品的生产" source="assets/flfg/txt/01_03.txt"/>
+		<caption id="c04" title="第四章 烟草制品的销售和运输" source="assets/flfg/txt/01_04.txt"/>
+		<caption id="c05" title="第五章 卷烟纸、滤嘴棒、烟用丝束、烟草专用机械的生产和销售" source="assets/flfg/txt/01_05.txt"/>
+		<caption id="c06" title="第六章 进出口贸易和对外经济技术合作" source="assets/flfg/txt/01_06.txt"/>
+		<caption id="c07" title="第七章 法律责任" source="assets/flfg/txt/01_07.txt"/>
+		<caption id="c08" title="第八章 附 则" source="assets/flfg/txt/01_08.txt"/>
+	</flfg>
+	
+	<flfg id="flfg_02" title="中华人民共和国烟草专卖法实施条例" source="assets/flfg/txt/02.txt">
+		<caption id="c01" title="第一章 总 则" 			source="assets/flfg/txt/02_01.txt"/>
+		<caption id="c02" title="第二章 烟草专卖许可证" source="assets/flfg/txt/02_02.txt"/>
+		<caption id="c03" title="第三章 烟叶的种植、收购和调拨" source="assets/flfg/txt/02_03.txt"/>
+		<caption id="c04" title="第四章 烟草制品的生产" source="assets/flfg/txt/02_04.txt"/>
+		<caption id="c05" title="第五章 烟草制品的销售" source="assets/flfg/txt/02_05.txt"/>
+		<caption id="c06" title="第六章 烟草专卖品的运输" source="assets/flfg/txt/02_06.txt"/>
+		<caption id="c07" title="第七章 卷烟纸、滤嘴棒、烟用丝束、烟草专用机械的生产和销售" source="assets/flfg/txt/02_07.txt"/>
+		<caption id="c08" title="第八章 进出口贸易和对外经济技术合作" source="assets/flfg/txt/02_08.txt"/>
+		<caption id="c09" title="第九章 监督检查" source="assets/flfg/txt/02_09.txt"/>
+		<caption id="c10" title="第十章 法律责任" source="assets/flfg/txt/02_10.txt"/>
+		<caption id="c11" title="第十一章 附 则" source="assets/flfg/txt/02_11.txt"/>
+	</flfg>
+		
+	<flfg id="flfg_03" title="烟草专卖品准运证管理办法" source="assets/flfg/txt/03.txt">
+		<caption id="c01" title="第一章 总 则" 			source="assets/flfg/txt/03_01.txt"/>
+		<caption id="c02" title="第二章 烟草专卖品准运证的签发 " source="assets/flfg/txt/03_02.txt"/>
+		<caption id="c03" title="第三章 烟草专卖品准运证申请条件和办理程序 " source="assets/flfg/txt/03_03.txt"/>
+		<caption id="c04" title="第四章 监督管理 " source="assets/flfg/txt/03_04.txt"/>
+		<caption id="c05" title="第五章 罚 则 " source="assets/flfg/txt/03_05.txt"/>
+		<caption id="c06" title="第六章 附 则 " source="assets/flfg/txt/03_06.txt"/>
+	</flfg>
+	
+	
+	<flfg id="flfg_04" title="烟草专卖许可证管理办法" 	source="assets/flfg/txt/04.txt">
+		<caption id="c01" title="第一章 总 则" 			source="assets/flfg/txt/04_01.txt"/>
+		<caption id="c02" title="第二章 申请与受理 " 		source="assets/flfg/txt/04_02.txt"/>
+		<caption id="c03" title="第三章 审批与发放 " 		source="assets/flfg/txt/04_03.txt"/>
+		<caption id="c04" title="第四章 烟草专卖许可证的使用 " source="assets/flfg/txt/04_04.txt"/>
+		<caption id="c05" title="第五章 监督管理 " 		source="assets/flfg/txt/04_05.txt"/>
+		<caption id="c06" title="第六章 法律责任" 		source="assets/flfg/txt/04_06.txt"/>
+		<caption id="c07" title="第七章 附  则" 			source="assets/flfg/txt/04_06.txt"/>
+	</flfg>
+	
+	<flfg id="flfg_05" title="烟草专卖行政处罚程序规定" 		source="assets/flfg/txt/05.txt">
+		<caption id="c01" title="第一章 总 则" 				source="assets/flfg/txt/05_01.txt"/>
+		<caption id="c02" title="第二章　管　　辖 " 			source="assets/flfg/txt/05_02.txt"/>
+		<caption id="c03" title="第三章　简易程序 " 			source="assets/flfg/txt/05_03.txt"/>
+		<caption id="c04" title="第四章　一般程序 " 			source="assets/flfg/txt/05_04.txt"/>
+		<caption id="c05" title="第五章　听证程序 " 			source="assets/flfg/txt/05_05.txt"/>
+		<caption id="c06" title="第六章　行政处罚的执行" 		source="assets/flfg/txt/05_06.txt"/>
+		<caption id="c07" title="第七章　执法监督" 			source="assets/flfg/txt/05_07.txt"/>
+		<caption id="c08" title="第八章　法律责任" 			source="assets/flfg/txt/05_08.txt"/>
+		<caption id="c09" title="第九章　附　 则" 			source="assets/flfg/txt/05_09.txt"/>
+	</flfg>
+	
+	<flfg id="flfg_06" title="甘肃省烟草专卖若干规定" source="assets/flfg/txt/06.txt">
+	</flfg>
+	<flfg id="flfg_07" title="中华人民共和国行政许可法" 		source="assets/flfg/txt/07.txt">
+		<caption id="c01" title="第一章 总 则" 				source="assets/flfg/txt/07_01.txt"/>
+		<caption id="c02" title="第二章 行政处罚的种类和设定" source="assets/flfg/txt/07_02.txt"/>
+		<caption id="c03" title="第三章 行政处罚的实施机关" 	source="assets/flfg/txt/07_03.txt"/>
+		<caption id="c04" title="第四章　行政处罚的管辖和适用" 	source="assets/flfg/txt/07_04.txt"/>
+		<caption id="c05" title="第五章　行政处罚的决定" 		source="assets/flfg/txt/07_05.txt"/>
+		<caption id="c06" title="第六章　行政处罚的执行" 		source="assets/flfg/txt/07_06.txt"/>
+		<caption id="c07" title="第七章 法律责任" 			source="assets/flfg/txt/07_07.txt"/>
+		<caption id="c08" title="第八章 附   则" 			source="assets/flfg/txt/07_08.txt"/>
+	</flfg>
+	
+	<flfg id="flfg_08" title="中华人民共和国行政处罚法" source="assets/flfg/txt/08.txt">
+		<caption id="c01" title="第一章 总 则" 				source="assets/flfg/txt/08_01.txt"/>
+		<caption id="c02" title="第二章 行政许可的设定 " 		source="assets/flfg/txt/08_02.txt"/>
+		<caption id="c03" title="第三章 行政许可的实施机关" 	source="assets/flfg/txt/08_03.txt"/>
+		<caption id="c04" title="第四章 行政许可的实施程序" 	source="assets/flfg/txt/08_04.txt"/>
+		<caption id="c05" title="第五章 行政许可的费用" 		source="assets/flfg/txt/08_05.txt"/>
+		<caption id="c06" title="第六章 监督检查" 			source="assets/flfg/txt/08_06.txt"/>
+		<caption id="c07" title="第七章 法律责任" 			source="assets/flfg/txt/08_07.txt"/>
+		<caption id="c08" title="第八章 附   则" 			source="assets/flfg/txt/08_08.txt"/>
+	</flfg>	
+	
+	<flfg id="flfg_09" title="中华人民共和国行政复议法" 		source="assets/flfg/txt/09.txt">
+		<caption id="c01" title="第一章  总 则" 				source="assets/flfg/txt/09_01.txt"/>
+		<caption id="c02" title="第二章　行政复议范围" 		source="assets/flfg/txt/09_02.txt"/>
+		<caption id="c03" title="第三章　行政复议申请" 		source="assets/flfg/txt/09_03.txt"/>
+		<caption id="c04" title="第四章　行政复议受理" 		source="assets/flfg/txt/09_04.txt"/>
+		<caption id="c05" title="第五章　行政复议决定" 		source="assets/flfg/txt/09_05.txt"/>
+		<caption id="c06" title="第六章　法律责任" 			source="assets/flfg/txt/09_06.txt"/>
+		<caption id="c07" title="第七章  附   则" 			source="assets/flfg/txt/09_07.txt"/>
+	</flfg>	
+	
+	<flfg id="flfg_10" title="中华人民共和国行政强制法" source="assets/flfg/txt/10.txt">
+		<caption id="c01" title="第一章 总 则" 					source="assets/flfg/txt/10_01.txt"/>
+		<caption id="c02" title="第二章 行政强制的种类和设定 " 	source="assets/flfg/txt/10_02.txt"/>
+		<caption id="c03" title="第三章 行政强制措施实施程序" 	source="assets/flfg/txt/10_03.txt"/>
+		<caption id="c04" title="第四章 行政机关强制执行程序" 	source="assets/flfg/txt/10_04.txt"/>
+		<caption id="c05" title="第五章 申请人民法院强制执行" 	source="assets/flfg/txt/10_05.txt"/>
+		<caption id="c06" title="第六章 法律责任" 				source="assets/flfg/txt/10_06.txt"/>
+		<caption id="c07" title="第七章 附   则" 				source="assets/flfg/txt/10_07.txt"/>
+	</flfg>	
+	
+	<flfg id="flfg_11" title="中华人民共和国行政诉讼法" source="assets/flfg/txt/11.txt">
+		<caption id="c01" title="第一章 总 则" 					source="assets/flfg/txt/11_01.txt"/>
+		<caption id="c02" title="第二章 受案范围" 				source="assets/flfg/txt/11_02.txt"/>
+		<caption id="c03" title="第三章 管辖" 					source="assets/flfg/txt/11_03.txt"/>
+		<caption id="c04" title="第四章 诉讼参加人" 				source="assets/flfg/txt/11_04.txt"/>
+		<caption id="c05" title="第五章 证据" 					source="assets/flfg/txt/11_05.txt"/>
+		<caption id="c06" title="第六章 起诉和受理" 				source="assets/flfg/txt/11_06.txt"/>
+		<caption id="c07" title="第七章 审理和判决" 				source="assets/flfg/txt/11_07.txt"/>
+		<caption id="c08" title="第八章 执行" 					source="assets/flfg/txt/11_08.txt"/>
+		<caption id="c09" title="第九章 涉外行政诉讼" 			source="assets/flfg/txt/11_09.txt"/>
+	</flfg>	
+	
+	
+	<!--营销服务-->
+	<yxfw id="yxfw_1" title="现代终端简介" width="200" height="160" imgbtn="assets/images/cjwt2.png">
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/01.txt"/>
+		<item id="item02" type="image" title=" 2、现代终端前柜、背柜样式图" source="assets/yxfw/images/zhongduan1.png"  desc="市公司统一设计的背柜样式"/>
+		<item id="item03" type="image" title="" source="assets/yxfw/images/zhongduan2.png" desc="市公司统一设计的背柜样式"/>
+		<item id="item04" type="image" title="" source="assets/yxfw/images/zhongduan3.png"/>
+		<item id="item05" type="image" title="" source="assets/yxfw/images/zhongduan4.png"/>
+		<item id="item06" type="image" title=" 4、现代终端配备灯箱实际效果图" source="assets/yxfw/images/zhongduan5.png"/>
+	</yxfw>
+	<yxfw id="yxfw_2" title="零售客户总量浮动管理办法" width="200" height="160" imgbtn="assets/images/cjwt2.png">
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/02.txt"/>
+	</yxfw>
+	<yxfw id="yxfw_3" title="零售客户分类" width="200" height="160" imgbtn="assets/images/cjwt2.png">
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/03_01.txt"/>
+		<item id="item01" type="image" title="" source="assets/yxfw/images/excel1.png"/>
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/03_02.txt"/>
+		<item id="item01" type="image" title="" source="assets/yxfw/images/excel2.png"/>
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/03_03.txt"/>
+		<item id="item01" type="image" title="" source="assets/yxfw/images/gongshi.png"/>
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/03_04.txt"/>
+		<item id="item01" type="image" title="" source="assets/yxfw/images/excel3.png"/>
+	</yxfw>
+	
+	<yxfw id="yxfw_4" title="新商盟订货流程" width="200" height="160" imgbtn="assets/images/cjwt2.png">
+		<item id="item01" type="text" title="1.网上订烟流程" source=""/>
+		<item id="item01" type="image" title="" source="assets/yxfw/images/liucheng1.png"/>
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/04_01.txt" />
+		<item id="item01" type="image" title="" source="assets/yxfw/images/liucheng2.png"/>
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/04_02.txt"/>
+		<item id="item01" type="image" title="" source="assets/yxfw/images/liucheng3.png"/>
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/04_03.txt"/>
+		<item id="item01" type="image" title="" source="assets/yxfw/images/liucheng4.png"/>
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/04_04.txt"/>
+		<item id="item01" type="image" title="" source="assets/yxfw/images/liucheng5.png"/>
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/04_05.txt"/>
+		<item id="item01" type="image" title="" source="assets/yxfw/images/liucheng6.png"/>
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/04_06.txt"/>
+		<item id="item01" type="image" title="" source="assets/yxfw/images/liucheng7.png"/>
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/04_07.txt"/>
+		<item id="item01" type="image" title="" source="assets/yxfw/images/liucheng8.png"/>
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/04_06.txt"/>
+		<item id="item01" type="image" title="" source="assets/yxfw/images/liucheng7.png"/>
+	</yxfw>
+	
+	<yxfw id="yxfw_5" title="零售客户需求提报"width="200" height="160" imgbtn="assets/images/cjwt2.png">
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/05_01.txt"/>
+		<item id="item02" type="image" title="" source="assets/yxfw/images/05_01.png"/>
+		<item id="item03" type="text" title="" source="assets/yxfw/txt/05_02.txt"/>
+		<item id="item04" type="image" title="" source="assets/yxfw/images/05_02.png"/>
+		<item id="item05" type="text" title="" source="assets/yxfw/txt/05_03.txt"/>
+		<item id="item06" type="image" title="" source="assets/yxfw/images/05_03.png"/>
+		<item id="item07" type="text" title="" source="assets/yxfw/txt/05_04.txt"/>
+	</yxfw>
+	
+	<yxfw id="yxfw_6" title="卷烟配送服务" width="200" height="160" imgbtn="assets/images/cjwt2.png">
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/06.txt"/>
+	</yxfw>
+	
+	<yxfw id="yxfw_7" title="行业重点品牌和低焦油品牌名单" width="420" height="160" imgbtn="assets/images/cjwt2.png">
+		<item id="item01" type="image" title="" source="assets/yxfw/images/mingdan.png"/>
+	</yxfw>
+	
+	
+	<yxfw id="yxfw_8" title="卷烟经营小贴士" width="200" height="160" imgbtn="assets/images/cjwt2.png">
+		<item id="item01" type="text" title="" source="assets/yxfw/txt/08.txt"/>
+	</yxfw>
+	
+	<yxfw id="yxfw_9" title="卷烟价格目录" width="200" height="160" imgbtn="assets/images/cjwt2.png">
+		<item id="item01" type="三" title="湖南中烟" spec="白沙（精品二代）" 	barcode="6901028191111" pfprice="88" 	lsprice="100" 	source="assets/jyjg/images/01.png"/>
+		<item id="item02" type="三" title="湖南中烟" spec="白沙（新精品）" 	barcode="6901028196697" pfprice="" 		lsprice="" 		source="assets/jyjg/images/02.png"/>
+		<item id="item03" type="三" title="湖南中烟" spec="白沙（硬香槟）" 	barcode="6901028196505" pfprice="63" 	lsprice="70" 	source="assets/jyjg/images/03.png"/>
+		<item id="item04" type="四" title="湖南中烟" spec="白沙（硬）" 		barcode="6901028191142" pfprice="45" 	lsprice="50" 	source="assets/jyjg/images/04.png"/>
+		<item id="item05" type="一" title="湖南中烟" spec="芙蓉王（硬）" 		barcode="6901028069762" pfprice="206" 	lsprice="230" 	source="assets/jyjg/images/05.png"/>
+		<item id="item06" type="一" title="湖南中烟" spec="芙蓉王（钻石)" 	barcode="6901028194990" pfprice="680" 	lsprice="680" 	source="assets/jyjg/images/06.png"/>
+		<item id="item07" type="一" title="湖南中烟" spec="芙蓉王（软蓝)" 	barcode="6901028193924" pfprice="500" 	lsprice="550" 	source="assets/jyjg/images/07.png"/>
+		<item id="item08" type="一" title="湖南中烟" spec="芙蓉王（蓝）" 		barcode="6901028193863" pfprice="290" 	lsprice="350" 	source="assets/jyjg/images/08.png"/>
+		<item id="item09" type="一" title="贵州中烟" spec="贵烟（国酒香 30）"	barcode="6901028102810" pfprice="680" 	lsprice="800" 	source="assets/jyjg/images/09.png"/>
+		<item id="item10" type="一" title="贵州中烟" spec="贵烟（玉液2号）" 	barcode="6901028221290" pfprice="260" 	lsprice="350" 	source="assets/jyjg/images/10.png"/>
+		<item id="item11" type="三" title="贵州中烟" spec="贵烟（多彩）" 		barcode="6901028037938" pfprice="88" 	lsprice="100" 	source="assets/jyjg/images/11.png"/>
+		<item id="item12" type="二" title="贵州中烟" spec="贵烟（好彩）" 		barcode="6901028102971" pfprice="115" 	lsprice="130" 	source="assets/jyjg/images/12.png"/>
+		<item id="item13" type="三" title="贵州中烟" spec="黄果树（长征1935）" 		barcode="6901028102308" pfprice="63" 	lsprice="70" 	source="assets/jyjg/images/13.png"/>
+		<item id="item14" type="四" title="贵州中烟" spec="黄果树（长征）" 	barcode="6901028095891" pfprice="45" 	lsprice="50" 	source="assets/jyjg/images/14.png"/>
+		<item id="item15" type="一" title="山东中烟" spec="泰山(拂光)" 		barcode="6901028157629" pfprice="680" 	lsprice="1000" 	source="assets/jyjg/images/15.png"/>
+		<item id="item16" type="三" title="山东中烟" spec="泰山(红将军)" 		barcode="6901028157650" pfprice="680" 	lsprice="1000" 	source="assets/jyjg/images/16.png"/>
+		<item id="item17" type="三" title="山东中烟" spec="泰山(宏图)" 		barcode="6901028157216" pfprice="88" 	lsprice="100" 	source="assets/jyjg/images/17.png"/>
+		<item id="item18" type="一" title="山东中烟" spec="泰山(望岳)" 		barcode="6901028150378" pfprice="158" 	lsprice="180" 	source="assets/jyjg/images/18.png"/>
+		<item id="item19" type="三" title="山东中烟" spec="泰山(硬红八喜)" 	barcode="6901028159548" pfprice="54" 	lsprice="60" 	source="assets/jyjg/images/19.png"/>
+		<item id="item20" type="二" title="山东中烟" spec="泰山(青秀)" 		barcode="6901028159579" pfprice="115" 	lsprice="130" 	source="assets/jyjg/images/20.png"/>
+		<item id="item21" type="一" title="山东中烟" spec="泰山(硬神秀)" 		barcode="6901028157087" pfprice="115" 	lsprice="130" 	source="assets/jyjg/images/21.png"/>
+		<item id="item22" type="四" title="山东中烟" spec="哈德门（纯香）" 	barcode="6901028149921" pfprice="45" 	lsprice="50" 	source="assets/jyjg/images/22.png"/>
+		<item id="item23" type="四" title="山东中烟" spec="哈德门（精品）" 	barcode="6901028149365" pfprice="36" 	lsprice="40" 	source="assets/jyjg/images/23.png"/>
+		<item id="item24" type="一" title="陕西中烟" spec="好猫(非常)" 		barcode="6901028936231" pfprice="680" 	lsprice="1000" 	source="assets/jyjg/images/24.png"/>
+		<item id="item25" type="三" title="陕西中烟" spec="好猫(猴王磨砂)" 	barcode="6901028936477" pfprice="88" 	lsprice="100" 	source="assets/jyjg/images/25.png"/>
+		<item id="item26" type="一" title="陕西中烟" spec="好猫(吉祥)" 		barcode="6901028936200" pfprice="206" 	lsprice="240" 	source="assets/jyjg/images/26.png"/>
+		<item id="item27" type="二" title="陕西中烟" spec="好猫(炫蓝)" 		barcode="6901028936149" pfprice="160" 	lsprice="180" 	source="assets/jyjg/images/27.png"/>
+		<item id="item28" type="三" title="陕西中烟" spec="好猫（步步高）" 	barcode="6901028936446" pfprice="97" 	lsprice="120" 	source="assets/jyjg/images/28.png"/>
+		<item id="item29" type="四" title="陕西中烟" spec="延安（软）" 		barcode="6901028059206" pfprice="45" 	lsprice="50" 	source="assets/jyjg/images/29.png"/>
+		
+		<item id="item30" type="二" title="红云红河集团" spec="云烟（大紫）" 		barcode="6901028311526" pfprice="115" 	lsprice="130" 	source="assets/jyjg/images/30.png"/>
+		<item id="item31" type="一" title="红云红河集团" spec="云烟(清甜香)" 		barcode="6901028310536" pfprice="260" 	lsprice="300" 	source="assets/jyjg/images/31.png"/>
+		<item id="item32" type="一" title="红云红河集团" spec="云烟(软大重九)" 	barcode="6901028051989" pfprice="680" 	lsprice="1000" 	source="assets/jyjg/images/32.png"/>
+		<item id="item33" type="一" title="红云红河集团" spec="云烟(软礼印象)" 	barcode="6901028310833" pfprice="680" 	lsprice="1000" 	source="assets/jyjg/images/33.png"/>
+		<item id="item34" type="三" title="红云红河集团" spec="云云烟(软如意)" 	barcode="6901028310628" pfprice="880" 	lsprice="1000" 	source="assets/jyjg/images/34.png"/>
+		<item id="item35" type="三" title="红云红河集团" spec="云烟(软珍品)" 		barcode="6901028045919" pfprice="195" 	lsprice="220" 	source="assets/jyjg/images/35.png"/>
+		<item id="item36" type="三" title="红云红河集团" spec="云烟(软紫)" 		barcode="6901028311168" pfprice="85" 	lsprice="100" 	source="assets/jyjg/images/36.png"/>
+		<item id="item37" type="一" title="红云红河集团" spec="云烟(印象)" 		barcode="6901028310444" pfprice="530" 	lsprice="600" 	source="assets/jyjg/images/37.png"/>
+		<item id="item38" type="三" title="红云红河集团" spec="云烟(紫)" 			barcode="6901028046893" pfprice="83" 	lsprice="95" 	source="assets/jyjg/images/38.png"/>
+		<item id="item39" type="三" title="红云红河集团" spec="红河（硬）" 		barcode="6901028055338" pfprice="54" 	lsprice="60" 	source="assets/jyjg/images/39.png"/>
+		
+		<item id="item40" type="一" title="湖北中烟" 	spec="黄鹤楼(软1916)" 	barcode="6901028179065" pfprice="800" 	lsprice="1000" 	source="assets/jyjg/images/40.png"/>
+		<item id="item41" type="一" title="湖北中烟" 	spec="黄鹤楼(软蓝)" 		barcode="6901028180580" pfprice="155" 	lsprice="180" 	source="assets/jyjg/images/41.png"/>
+		<item id="item42" type="一" title="湖北中烟" 	spec="黄鹤楼(软论道)" 	barcode="6901028185400" pfprice="400" 	lsprice="500" 	source="assets/jyjg/images/42.png"/>
+		<item id="item43" type="一" title="湖北中烟" 	spec="黄鹤楼(硬1916)" 	barcode="6901028184250" pfprice="800" 	lsprice="1000" 	source="assets/jyjg/images/43.png"/>
+		<item id="item44" type="二" title="湖北中烟" 	spec="黄鹤楼(硬金砂)" 	barcode="6901028180665" pfprice="135" 	lsprice="150" 	source="assets/jyjg/images/44.png"/>
+		<item id="item45" type="一" title="湖北中烟" 	spec="黄鹤楼(硬雅香)" 	barcode="6901028179867" pfprice="180" 	lsprice="200" 	source="assets/jyjg/images/45.png"/>
+		<item id="item46" type="一" title="湖北中烟" 	spec="黄鹤楼(硬珍品)" 	barcode="6901028179324" pfprice="320" 	lsprice="400" 	source="assets/jyjg/images/46.png"/>
+		<item id="item47" type="四" title="湖北中烟" 	spec="红金龙(软红九州腾龙)" 	barcode="6901028180405" pfprice="45" 	lsprice="50" 	source="assets/jyjg/images/47.png"/>
+		
+		
+		<item id="item49" type="三" title="红塔集团" 	spec="红塔山(硬经典)" 	barcode="6901028314985" pfprice="63" 	lsprice="70" 	source="assets/jyjg/images/49.png"/>
+		<item id="item50" type="三" title="红塔集团" 	spec="红塔山(硬经典100)" barcode="6901028315432" pfprice="83" 	lsprice="100" 	source="assets/jyjg/images/50.png"/>
+		<item id="item51" type="三" title="红塔集团" 	spec="红塔山(硬新势力)" 	barcode="6901028314176" pfprice="88" 	lsprice="100" 	source="assets/jyjg/images/51.png"/>
+		<item id="item52" type="四" title="红塔集团" 	spec="红梅（硬春兰）" 	barcode="6901028315043" pfprice="45" 	lsprice="50" 	source="assets/jyjg/images/52.png"/>
+		<item id="item53" type="一" title="红塔集团" 	spec="玉溪(境界)" 		barcode="6901028316125" pfprice="640" 	lsprice="1000" 	source="assets/jyjg/images/53.png"/>
+		<item id="item54" type="一" title="红塔集团" 	spec="玉溪(软)" 			barcode="6901028317177" pfprice="190" 	lsprice="210" 	source="assets/jyjg/images/54.png"/>
+		<item id="item55" type="一" title="红塔集团" 	spec="玉溪(软弘毅)" 		barcode="6901028047579" pfprice="260" 	lsprice="300" 	source="assets/jyjg/images/55.png"/>
+		<item id="item56" type="一" title="红塔集团" 	spec="玉溪（软小庄园）" 	barcode="6901028048682" pfprice="520" 	lsprice="600" 	source="assets/jyjg/images/56.png"/>
+		<item id="item57" type="一" title="红塔集团" 	spec="玉溪(硬和谐)" 		barcode="6901028314459" pfprice="340" 	lsprice="400" 	source="assets/jyjg/images/57.png"/>
+		<item id="item58" type="一" title="红塔集团" 	spec="玉溪(硬庄园16支)" 	barcode="6901028317672" pfprice="680" 	lsprice="980" 	source="assets/jyjg/images/58.png"/>
+		
+		
+		<item id="item59" type="二" title="河南中烟" 	spec="黄金叶(黄金眼)" 	barcode="6901028163651" pfprice="115" 	lsprice="130" 	source="assets/jyjg/images/59.png"/>
+		<item id="item60" type="三" title="河南中烟" 	spec="黄金叶(金满堂)" 	barcode="6901028169257" pfprice="88" 	lsprice="100" 	source="assets/jyjg/images/60.png"/>
+		<item id="item61" type="一" title="河南中烟" 	spec="黄金叶（流金岁月）" 	barcode="6901028169929" pfprice="260" 	lsprice="300" 	source="assets/jyjg/images/61.png"/>
+		<item id="item62" type="一" title="河南中烟" 	spec="黄金叶（硬大金圆双十支）" 	barcode="6901028170963" pfprice="175" 	lsprice="200" 	source="assets/jyjg/images/62.png"/>
+		<item id="item63" type="二" title="河南中烟" 	spec="黄金叶（百年浓香）" 	barcode="6901028160100" pfprice="260" 	lsprice="300" 	source="assets/jyjg/images/63.png"/>
+		<item id="item64" type="二" title="河南中烟" 	spec="黄金叶(软大金圆)" 	barcode="6901028163538" pfprice="178" 	lsprice="200" 	source="assets/jyjg/images/64.png"/>
+		<item id="item65" type="一" title="河南中烟" 	spec="黄金叶(天香)" 		barcode="6901028172899" pfprice="300" 	lsprice="350" 	source="assets/jyjg/images/65.png"/>
+		<item id="item66" type="一" title="河南中烟" 	spec="黄金叶(天叶)" 		barcode="6901028169967" pfprice="640" 	lsprice="1000" 	source="assets/jyjg/images/66.png"/>
+		<item id="item67" type="四" title="河南中烟" 	spec="红旗渠（银河之光）" 	barcode="6901028163538" pfprice="178" 	lsprice="200" 	source="assets/jyjg/images/67.png"/>
+		
+		<item id="item68" type="一" title="上海集团" 	spec="熊猫（硬时代版）" 	barcode="6901028076265" pfprice="720" 	lsprice="800" 	source="assets/jyjg/images/68.png"/>
+		<item id="item69" type="一" title="上海集团" 	spec="中华(大中华)" 		barcode="6901028074148" pfprice="800" 	lsprice="1000" 	source="assets/jyjg/images/69.png"/>
+		<item id="item70" type="一" title="上海集团" 	spec="中华(软)" 			barcode="6901028075022" pfprice="550" 	lsprice="640" 	source="assets/jyjg/images/70.png"/>
+		<item id="item71" type="一" title="上海集团" 	spec="中华(硬)" 			barcode="6901028075015" pfprice="360" 	lsprice="400" 	source="assets/jyjg/images/71.png"/>
+		<item id="item72" type="二" title="上海集团" 	spec="红双喜(硬晶喜)" 	barcode="6901028074711" pfprice="115" 	lsprice="130" 	source="assets/jyjg/images/72.png"/>
+		<item id="item73" type="三" title="上海集团" 	spec="红双喜(硬)" 		barcode="6901028075084" pfprice="63" 	lsprice="70" 	source="assets/jyjg/images/73.png"/>
+		<item id="item74" type="三" title="上海集团" 	spec="红双喜(硬8mg)" 	barcode="6901028075145" pfprice="71" 	lsprice="80" 	source="assets/jyjg/images/74.png"/>
+		<item id="item75" type="一" title="上海集团" 	spec="红双喜(硬晶派)" 	barcode="6901028073561" pfprice="178" 	lsprice="200" 	source="assets/jyjg/images/75.png"/>
+		<item id="item76" type="三" title="上海集团" 	spec="中南海(金8mg)" 	barcode="6901028071772" pfprice="54" 	lsprice="60" 	source="assets/jyjg/images/76.png"/>
+		<item id="item77" type="三" title="上海集团" 	spec="中南海(软蓝色时光)" 	barcode="6901028070133" pfprice="83" 	lsprice="100" 	source="assets/jyjg/images/77.png"/>
+		
+		<item id="item78" type="一" title="安徽中烟" 	spec="黄山(大红方印)" 	barcode="6901028131605" pfprice="260" 	lsprice="300" 	source="assets/jyjg/images/78.png"/>
+		<item id="item79" type="一" title="安徽中烟" 	spec="黄山(小红方印)" 	barcode="6901028131643" pfprice="175" 	lsprice="200" 	source="assets/jyjg/images/79.png"/>
+		<item id="item80" type="一" title="安徽中烟" 	spec="黄山(天都)" 		barcode="6901028131605" pfprice="680" 	lsprice="1000" 	source="assets/jyjg/images/80.png"/>
+		<item id="item81" type="四" title="安徽中烟" 	spec="黄山(硬一品)" 		barcode="6901028208819" pfprice="45" 	lsprice="50" 	source="assets/jyjg/images/81.png"/>
+		<item id="item82" type="三" title="安徽中烟" 	spec="黄山（硬中国风）" 	barcode="6901028223164" pfprice="260" 	lsprice="300" 	source="assets/jyjg/images/82.png"/>
+		<item id="item83" type="三" title="安徽中烟" 	spec="黄山(中国风)" 		barcode="6901028225595" pfprice="72" 	lsprice="80" 	source="assets/jyjg/images/83.png"/>
+		<item id="item84" type="三" title="安徽中烟" 	spec="黄山(中国松)" 		barcode="6901028223966" pfprice="88" 	lsprice="100" 	source="assets/jyjg/images/84.png"/>
+		
+		
+		<item id="item85" type="三" title="川渝中烟" 	spec="娇子(X)" 			barcode="6901028024976" pfprice="80" 	lsprice="90" 	source="assets/jyjg/images/85.png"/>
+		<item id="item86" type="三" title="川渝中烟" 	spec="娇子(X星座)" 		barcode="6901028202077" pfprice="132" 	lsprice="150" 	source="assets/jyjg/images/86.png"/>
+		<item id="item87" type="一" title="川渝中烟" 	spec="娇子(传奇天子)" 	barcode="6901028033640" pfprice="680" 	lsprice="800" 	source="assets/jyjg/images/87.png"/>
+		<item id="item88" type="一" title="川渝中烟" 	spec="娇子(锦绣)" 		barcode="6901028025102" pfprice="260" 	lsprice="300" 	source="assets/jyjg/images/88.png"/>
+		<item id="item89" type="二" title="川渝中烟" 	spec="娇子(软红)" 		barcode="6901028033619" pfprice="132" 	lsprice="150" 	source="assets/jyjg/images/89.png"/>
+		<item id="item90" type="一" title="川渝中烟" 	spec="娇子(软黄天子)" 	barcode="6901028030205" pfprice="370" 	lsprice="450" 	source="assets/jyjg/images/90.png"/>
+		<item id="item91" type="三" title="川渝中烟" 	spec="娇子(时代阳光)" 	barcode="6901028025645" pfprice="63" 	lsprice="70" 	source="assets/jyjg/images/91.png"/>
+		<item id="item92" type="三" title="川渝中烟" 	spec="娇子(新概念)" 		barcode="6901028025829" pfprice="80" 	lsprice="90" 	source="assets/jyjg/images/92.png"/>
+		<item id="item93" type="一" title="川渝中烟" 	spec="娇子(硬龙凤珍品)" 	barcode="6901028030717" pfprice="170" 	lsprice="200" 	source="assets/jyjg/images/93.png"/>
+		<item id="item94" type="四" title="川渝中烟" 	spec="狮牌（特香）" 		barcode="6901028035675" pfprice="45" 	lsprice="50" 	source="assets/jyjg/images/94.png"/>
+		
+		<item id="item95" type="三" title="江西中烟" 	spec="金圣(硬红)" 		barcode="6901028134910" pfprice="63" 	lsprice="70" 	source="assets/jyjg/images/95.png"/>
+		<item id="item96" type="三" title="江西中烟" 	spec="金圣(硬时代祥和)" 	barcode="6901028134972" pfprice="88" 	lsprice="100" 	source="assets/jyjg/images/96.png"/>
+		<item id="item97" type="一" title="江西中烟" 	spec="金圣(硬天成)" 		barcode="6901028136174" pfprice="178" 	lsprice="200" 	source="assets/jyjg/images/97.png"/>
+		
+		
+		<item id="item98" type="一" title="甘肃工业" 	spec="兰州(16支吉祥)" 	barcode="6901028134972" pfprice="160" 	lsprice="180" 	source="assets/jyjg/images/98.png"/>
+		<item id="item99" type="一" title="甘肃工业" 	spec="兰州(飞天)" 		barcode="6901028066068" pfprice="160" 	lsprice="180" 	source="assets/jyjg/images/99.png"/>
+		<item id="item100" type="一" title="甘肃工业" 	spec="兰州(软飞天)" 		barcode="6901028066099" pfprice="260" 	lsprice="300" 	source="assets/jyjg/images/100.png"/>
+		<item id="item101" type="四" title="甘肃工业" 	spec="兰州(软黄)" 		barcode="6901028065252" pfprice="27" 	lsprice="30" 	source="assets/jyjg/images/101.png"/>
+		<item id="item102" type="一" title="甘肃工业" 	spec="兰州(软珍品)" 		barcode="6901028066266" pfprice="160" 	lsprice="180" 	source="assets/jyjg/images/102.png"/>
+		<item id="item103" type="一" title="甘肃工业" 	spec="兰州（丝绸之路）" 	barcode="6901028066600" pfprice="430" 	lsprice="500" 	source="assets/jyjg/images/103.png"/>
+		<item id="item104" type="五" title="甘肃工业" 	spec="兰州(硬红)" 		barcode="6901028065597" pfprice="23" 	lsprice="25" 	source="assets/jyjg/images/104.png"/>
+		<item id="item105" type="四" title="甘肃工业" 	spec="兰州(硬黄)" 		barcode="6901028066068" pfprice="31" 	lsprice="35" 	source="assets/jyjg/images/105.png"/>
+		<item id="item106" type="一" title="甘肃工业" 	spec="兰州(硬吉祥)" 		barcode="6901028065818" pfprice="207" 	lsprice="230" 	source="assets/jyjg/images/106.png"/>
+		<item id="item107" type="一" title="甘肃工业" 	spec="兰兰州(硬经典)" 	barcode="6901028065108" pfprice="246" 	lsprice="280" 	source="assets/jyjg/images/107.png"/>
+		<item id="item108" type="三" title="甘肃工业" 	spec="兰州(硬精品)" 		barcode="6901028065566" pfprice="62" 	lsprice="70" 	source="assets/jyjg/images/108.png"/>
+		<item id="item109" type="四" title="甘肃工业" 	spec="兰州(硬蓝)" 		barcode="6901028065085" pfprice="45" 	lsprice="50" 	source="assets/jyjg/images/109.png"/>
+		<item id="item110" type="三" title="甘肃工业" 	spec="兰州(硬如意)" 		barcode="6901028065450" pfprice="88" 	lsprice="100" 	source="assets/jyjg/images/110.png"/>
+		<item id="item111" type="二" title="甘肃工业" 	spec="兰州(硬珍品)" 		barcode="6901028065504" pfprice="144" 	lsprice="160" 	source="assets/jyjg/images/111.png"/>
+		
+		<item id="item112" type="一" title="浙江中烟" 	spec="利群(长嘴)" 		barcode="6901028118828" pfprice="180" 	lsprice="200" 	source="assets/jyjg/images/112.png"/>
+		<item id="item113" type="二" title="浙江中烟" 	spec="利群(软老版)" 		barcode="6901028120494" pfprice="135" 	lsprice="150" 	source="assets/jyjg/images/113.png"/>
+		<item id="item114" type="一" title="浙江中烟" 	spec="利群(神州)" 		barcode="6901028120111" pfprice="270" 	lsprice="300" 	source="assets/jyjg/images/114.png"/>
+		<item id="item115" type="一" title="浙江中烟" 	spec="利群(逍遥)" 		barcode="6901028120791" pfprice="680" 	lsprice="1000" 	source="assets/jyjg/images/115.png"/>
+		<item id="item116" type="二" title="浙江中烟" 	spec="利群(新版)" 		barcode="6901028118187" pfprice="116" 	lsprice="130" 	source="assets/jyjg/images/116.png"/>
+		<item id="item117" type="一" title="浙江中烟" 	spec="利群(休闲)" 		barcode="6901028207829" pfprice="680" 	lsprice="1000" 	source="assets/jyjg/images/117.png"/>
+		<item id="item118" type="一" title="浙江中烟" 	spec="利群(阳光)" 		barcode="6901028117340" pfprice="400" 	lsprice="500" 	source="assets/jyjg/images/118.png"/>
+		<item id="item119" type="一" title="浙江中烟" 	spec="利群(硬)" 			barcode="6901028207850" pfprice="216" 	lsprice="260" 	source="assets/jyjg/images/119.png"/>
+		<item id="item120" type="四" title="浙江中烟" 	spec="雄狮（硬）" 		barcode="6901028207881" pfprice="45" 	lsprice="50" 	source="assets/jyjg/images/120.png"/>
+		
+		
+		<item id="item121" type="一" title="福建中烟" 	spec="七匹狼(16支纯香)" 	barcode="6901028142304" pfprice="260" 	lsprice="300" 	source="assets/jyjg/images/121.png"/>
+		<item id="item122" type="二" title="福建中烟" 	spec="七匹狼(纯雅)" 		barcode="6901028142168" pfprice="135" 	lsprice="150" 	source="assets/jyjg/images/122.png"/>
+		<item id="item123" type="四" title="福建中烟" 	spec="七匹狼(豪情)" 		barcode="6901028138369" pfprice="45" 	lsprice="50" 	source="assets/jyjg/images/123.png"/>
+		<item id="item124" type="三" title="福建中烟" 	spec="七匹狼(鸿福)" 		barcode="6901028142571" pfprice="85" 	lsprice="100" 	source="assets/jyjg/images/124.png"/>
+		<item id="item125" type="三" title="福建中烟" 	spec="七匹狼(蓝)" 		barcode="6901028141147" pfprice="63" 	lsprice="70" 	source="assets/jyjg/images/125.png"/>
+		<item id="item126" type="二" title="福建中烟" 	spec="七匹狼(通泰)" 		barcode="6901028141642" pfprice="160" 	lsprice="180" 	source="assets/jyjg/images/126.png"/>
+		<item id="item127" type="一" title="福建中烟" 	spec="七匹狼(通运)" 		barcode="6901028141673" pfprice="190" 	lsprice="220" 	source="assets/jyjg/images/127.png"/>
+		
+		
+		<item id="item128" type="一" title="江苏中烟" 	spec="南京（九五）" 		barcode="6901028112789" pfprice="830" 	lsprice="1000" 	source="assets/jyjg/images/128.png"/>
+		<item id="item129" type="一" title="江苏中烟" 	spec="南京（雨花石）" 	barcode="6901028111546" pfprice="430" 	lsprice="500" 	source="assets/jyjg/images/129.png"/>
+		<item id="item130" type="一" title="江苏中烟" 	spec="苏烟（软金砂）" 	barcode="6901028114455" pfprice="400" 	lsprice="450" 	source="assets/jyjg/images/130.png"/>
+		<item id="item131" type="一" title="江苏中烟" 	spec="苏烟（五星红杉树）" 	barcode="6901028062015" pfprice="178" 	lsprice="200" 	source="assets/jyjg/images/131.png"/>
+		
+		
+		<item id="item132" type="三" title="广东中烟" 	spec="双喜(软经典)" 		barcode="6901028000833" pfprice="81" 	lsprice="90" 	source="assets/jyjg/images/132.png"/>
+		<item id="item133" type="二" title="广东中烟" 	spec="双喜(硬经典1906)" 	barcode="6901028001625" pfprice="142" 	lsprice="160" 	source="assets/jyjg/images/133.png"/>
+		<item id="item134" type="一" title="广东中烟" 	spec="双喜(硬逸品)" 		barcode="6901028001656" pfprice="430" 	lsprice="480" 	source="assets/jyjg/images/134.png"/>
+		
+		
+		<item id="item135" type="一" title="广西中烟" 	spec="真龙(巴马天成)" 	barcode="6901028013970" pfprice="680" 	lsprice="1000" 	source="assets/jyjg/images/135.png"/>
+		<item id="item136" type="四" title="广西中烟" 	spec="真龙(娇子)" 		barcode="6901028015424" pfprice="45" 	lsprice="50" 	source="assets/jyjg/images/136.png"/>
+		<item id="item137" type="一" title="广西中烟" 	spec="真龙(中国龙)" 		barcode="6901028011754" pfprice="300" 	lsprice="350" 	source="assets/jyjg/images/137.png"/>
+		<item id="item138" type="三" title="广西中烟" 	spec="真龙(天翔)" 		barcode="6901028013703" pfprice="72" 	lsprice="80" 	source="assets/jyjg/images/138.png"/>
+		
+		
+		<item id="item139" type="一" title="河北中烟" 	spec="钻石(避暑山庄)" 	barcode="6901028079679" pfprice="520" 	lsprice="600" 	source="assets/jyjg/images/139.png"/>
+		<item id="item140" type="四" title="河北中烟" 	spec="钻石(软红)" 		barcode="6901028250641" pfprice="45" 	lsprice="50" 	source="assets/jyjg/images/140.png"/>
+		<item id="item141" type="二" title="河北中烟" 	spec="钻石(时尚)" 		barcode="6901028078252" pfprice="135" 	lsprice="150" 	source="assets/jyjg/images/141.png"/>
+		<item id="item142" type="一" title="河北中烟" 	spec="钻石(硬蓝10支120mm)" 		barcode="6901028250825" pfprice="245" 	lsprice="280" 	source="assets/jyjg/images/142.png"/>
+		
+		
+		
+		<item id="item143" type="二" title="美国菲莫" 	spec="万宝路(软红)" 		barcode="6901028138161" pfprice="122" 	lsprice="145" 	source="assets/jyjg/images/143.png"/>
+		<item id="item144" type="二" title="美国菲莫" 	spec="万宝路(硬红)" 		barcode="6901028195645" pfprice="128" 	lsprice="150" 	source="assets/jyjg/images/144.png"/>
+		<item id="item145" type="一" title="美国菲莫" 	spec="万宝路(硬金)" 		barcode="6901028069885" pfprice="178" 	lsprice="200" 	source="assets/jyjg/images/145.png"/>
+		<item id="item146" type="一" title="美国菲莫" 	spec="万宝路(软金)" 		barcode="6901028142137" pfprice="158" 	lsprice="180" 	source="assets/jyjg/images/146.png"/>
+		
+		<item id="item147" type="一" title="英美烟草公司" 	spec="555(弘)" 		barcode="8888075000635" pfprice="241" 	lsprice="270" 	source="assets/jyjg/images/147.png"/>
+		<item id="item148" type="一" title="英美烟草公司" 	spec="555(弘博）" 	barcode="8888075005463" pfprice="241" 	lsprice="270" 	source="assets/jyjg/images/148.png"/>
+		<item id="item149" type="一" title="英美烟草公司" 	spec="555（金）" 	barcode="8888075005494" pfprice="130" 	lsprice="160" 	source="assets/jyjg/images/149.png"/>
+		<item id="item150" type="一" title="英美烟草公司" 	spec="555（金·锐）" 		barcode="8888075005524" pfprice="130" 	lsprice="160" 	source="assets/jyjg/images/150.png"/>
+		<item id="item151" type="一" title="英美烟草公司" 	spec="556（天越）" 	barcode="8888075005494" pfprice="178" 	lsprice="200" 	source="assets/jyjg/images/151.png"/>
+		
+		<item id="item152" type="三" title="韩国爱喜烟草公司" 	spec="爱喜（薄荷）" 	barcode="8801116200597" pfprice="81" 	lsprice="90" 	source="assets/jyjg/images/152.png"/>
+		<item id="item153" type="三" title="韩国爱喜烟草公司" 	spec="爱喜(红)" 	barcode="8801116200177" pfprice="81" 	lsprice="90" 	source="assets/jyjg/images/153.png"/>
+		<item id="item154" type="二" title="韩国爱喜烟草公司" 	spec="宝亨莫吉托" 	barcode="8801116003303" pfprice="136" 	lsprice="150" 	source="assets/jyjg/images/154.png"/>
+		
+		
+		<item id="item155" type="一" title="帝国烟草" 	spec="大卫杜夫（普通）" 	barcode="4030600085103" pfprice="155" 	lsprice="180" 	source="assets/jyjg/images/155.png"/>
+		<item id="item156" type="一" title="帝国烟草" 	spec="大卫杜夫国际装(金装)" 	barcode="4030600066249" pfprice="300" 	lsprice="340" 	source="assets/jyjg/images/156.png"/>
+		<item id="item157" type="二" title="帝国烟草" 	spec="建牌(HD银4)" 		barcode="8888075005104" pfprice="135" 	lsprice="150" 	source="assets/jyjg/images/157.png"/>
+		
+		<item id="item158" type="无" title="川渝中烟" 	spec="长城(10支132秘制)" 	barcode="6901028032957" pfprice="900" 	lsprice="1200" 	source="assets/jyjg/images/158.png"/>
+		<item id="item159" type="无" title="川渝中烟" 	spec="长城(3支传奇1号)" 	barcode="6901028032575" pfprice="216" 	lsprice="300" 	source="assets/jyjg/images/159.png"/>
+		<item id="item160" type="无" title="川渝中烟" 	spec="长城(5支传奇1号)" 	barcode="6901028032605" pfprice="360" 	lsprice="500" 	source="assets/jyjg/images/160.png"/>
+		<item id="item161" type="无" title="川渝中烟" 	spec="长城(金南极)" 		barcode="6901028032605" pfprice="360" 	lsprice="500" 	source="assets/jyjg/images/161.png"/>
+		<item id="item162" type="无" title="川渝中烟" 	spec="长城(迷你咖啡)" 	barcode="6901028032605" pfprice="360" 	lsprice="500" 	source="assets/jyjg/images/162.png"/>
+		<item id="item163" type="无" title="川渝中烟" 	spec="长城(骑士国际香草1号)" 	barcode="6901028032605" pfprice="360" 	lsprice="500" 	source="assets/jyjg/images/163.png"/>
+		<item id="item164" type="无" title="川渝中烟" 	spec="长城2号" 			barcode="6901028035330" pfprice="325" 	lsprice="400" 	source="assets/jyjg/images/164.png"/>
+		
+		
+		<item id="item165" type="无" title="安徽中烟" 	spec="王冠(10支全叶卷)" 			barcode="6901028131339" pfprice="400" 	lsprice="500" 	source="assets/jyjg/images/165.png"/>
+		<item id="item166" type="无" title="安徽中烟" 	spec="王冠（经典铝2支全叶卷）" 			barcode="6901028131988" pfprice="225" 	lsprice="300" 	source="assets/jyjg/images/166.png"/>
+		<item id="item167" type="无" title="安徽中烟" 	spec="王冠（奶香10支）" 	barcode="6901028223935" pfprice="224" 	lsprice="300" 	source="assets/jyjg/images/167.png"/>
+		<item id="item168" type="无" title="安徽中烟" 	spec="王冠(塑10支)" 		barcode="6901028124348" pfprice="14" 	lsprice="20" 	source="assets/jyjg/images/168.png"/>
+		
+		
+	</yxfw>
+	
+	
+	
+	<!--常见问题-->
+	<cjwt id="cjwt_01" title="政策方面"        width="200" height="200" 	source="assets/cjwt/01.txt" imgbtn="assets/images/cjwt2.png"/>
+	<cjwt id="cjwt_02" title="许可证管理方面"  width="300" height="200"  source="assets/cjwt/02.txt" imgbtn="assets/images/cjwt1.png"/>
+	<cjwt id="cjwt_03" title="执法检查方面"    width="300" height="200" 	source="assets/cjwt/03.txt" imgbtn="assets/images/cjwt2.png"/>
+	<cjwt id="cjwt_04" title="行政处罚方面"    width="300" height="200" 	source="assets/cjwt/04.txt" imgbtn="assets/images/cjwt1.png"/>
+	<cjwt id="cjwt_05" title="行政复议方面"    width="300" height="200" 	source="assets/cjwt/05.txt" imgbtn="assets/images/cjwt2.png"/>
+	<cjwt id="cjwt_06" title="其他方面"        width="200" height="200" 	source="assets/cjwt/06.txt" imgbtn="assets/images/cjwt1.png"/>
+	
+	
+	<!--公开公示-->
+	<gkgs id="gkgs_01" title="公开公示" source="assets/gkgs/01.txt">
+		<item id="item01" type="text" title="一、烟草专卖许可证名称"  								source="assets/gkgs/txt/01.txt"/>
+		<item id="item02" type="text" title="二、办理烟草专卖零售许的法律依据"  		                source="assets/gkgs/txt/02.txt"/>
+		<item id="item03" type="text" title="三、办理机关"  					                        source="assets/gkgs/txt/03.txt"/>
+		<item id="item04" type="text" title="四、申请烟草专卖零售许可证的条件"  						source="assets/gkgs/txt/04.txt"/>
+		<item id="item05" type="text" title="五、有下列情形之一的，不予发放烟草专卖零售许可证"  		source="assets/gkgs/txt/05.txt"/>
+		<item id="item06" type="text" title="六、申请烟草专卖零售许可证的方式"  					    source="assets/gkgs/txt/06.txt"/>
+		<item id="item07" type="text" title="七、申请办理烟草专卖零售许可证需准备的相关材料"  			source="assets/gkgs/txt/07.txt"/>
+		<item id="item08" type="text" title="八、烟草专卖零售许可证审批程序和时限"  	                source="assets/gkgs/txt/08.txt"/>
+		<item id="item09" type="text" title="九、办理烟草专卖零售许可证办公地址"  	                    source="assets/gkgs/txt/09.txt"/>
+		<item id="item10" type="image" title="十、《烟草专卖零售许可证申请表（客户填写）》的格式样本"   source="assets/gkgs/7.jpg" />
+	</gkgs>
+	
+	
+	<!--合理布局-->
+	<hlbj id="hlbj_01" title="合理化布局" source="assets/hlbj/01.txt">
+		<item id="item01" type="text" title="一、烟草专卖零售许可证申请人应符合以下条件："  	source="assets/hlbj/txt/01.txt"/>
+		<item id="item02" type="text" title="二、卷烟零售点间距应符合以下条件："  			source="assets/hlbj/txt/02.txt"/>
+		<item id="item03" type="text" title="三、卷烟零售点经营场所应符合以下条件："  		source="assets/hlbj/txt/03.txt"/>
+		<item id="item04" type="text" title="四、残疾人优待标准："  							source="assets/hlbj/txt/04.txt"/>
+		<item id="item05" type="text" title="五、不受距离限制的情形："  				source="assets/hlbj/txt/05.txt"/>
+		<item id="item06" type="text" title="六、距离测量标准："  						source="assets/hlbj/txt/06.txt"/>
+		<item id="item07" type="text" title="七、不作为参照标的情形："  					source="assets/hlbj/txt/07.txt"/>
+		<item id="item08" type="text" title="八、禁止情形"  						source="assets/hlbj/txt/08.txt"/>
+		<item id="item09" type="text" title="九、设置条件"  					source="assets/hlbj/txt/09.txt"/>
+	</hlbj>
+	
+	
+</configuration>

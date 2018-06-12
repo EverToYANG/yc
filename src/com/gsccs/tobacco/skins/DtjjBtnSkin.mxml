@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		creationComplete="init()"
+		alpha.disabled=".5" xmlns:mx="library://ns.adobe.com/flex/mx">
+	<fx:Metadata>
+		[HostComponent("spark.components.Button")]
+	</fx:Metadata>
+	<fx:Script>
+		<![CDATA[
+			import com.gsccs.tobacco.components.DTJJBtn;
+			
+			import mx.controls.Alert;
+			
+			protected function init():void
+			{
+				//为传入的图片路径
+				if (this.parent as  DTJJBtn){
+					
+					bitmap.width = DTJJBtn (this.parent).imgwidth;
+					bitmap.height = DTJJBtn (this.parent).imgheight; 
+					label.text = DTJJBtn (this.parent).label;
+					label.width = DTJJBtn (this.parent).imgwidth;
+					label.height = DTJJBtn (this.parent).imgheight;
+					
+					
+				}
+			}
+		]]>
+	</fx:Script>
+	<!-- 按钮的四种状态states -->
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+	</s:states>
+	
+	
+	<s:Graphic>
+		<s:BitmapImage id="bitmap" source.up="@Embed('assets/images/dtjjbtn.png')"
+					   source.over="@Embed('assets/images/dtjjbtn-cur.png')"
+					   source.down="@Embed('assets/images/dtjjbtn-cur.png')"
+					  />
+		
+	</s:Graphic>
+	
+	
+	<!--按钮下方显示文字-->
+	<s:Label id="label" 
+			 textAlign="center"
+			 verticalAlign="middle"
+			 maxDisplayedLines="5"  
+			 fontSize="16"
+			 fontWeight="bold"
+			color="#FFFFFF"/>
+	
+</s:Skin>

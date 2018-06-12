@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Button xmlns:fx="http://ns.adobe.com/mxml/2009"
+		  xmlns:s="library://ns.adobe.com/flex/spark"
+		  left="5" top="2.5" bottom="2.5" width="80" height="40"
+		  skinClass="com.gsccs.tobacco.skins.CjwtBtnSkin"
+		  click="button1_clickHandler(event)"
+		 >
+	<fx:Declarations>
+		
+		
+	</fx:Declarations>
+	
+	
+	<fx:Script>
+		<![CDATA[
+			import mx.controls.Alert;
+			public var imageURL:String="";
+			public var imgwidth:Number;
+			public var imgheight:Number;
+			
+
+			protected function button1_clickHandler(event:MouseEvent):void
+			{
+				
+			}
+
+		]]>
+	</fx:Script>
+	
+	
+	
+	
+</s:Button>

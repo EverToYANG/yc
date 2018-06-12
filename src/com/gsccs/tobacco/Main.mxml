@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Group xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		 xmlns:s="library://ns.adobe.com/flex/spark" 
+		 xmlns:mx="library://ns.adobe.com/flex/mx" 
+		 creationComplete="main_creationCompleteHandler(event)"
+		 xmlns:components="com.gsccs.tobacco.components.*" 
+		 xmlns:tobacco="com.gsccs.tobacco.*"
+		 width="100%" height="100%"
+		>
+	
+	
+	<fx:Declarations>
+		<!-- 将非可视元素（例如服务、值对象）放在此处 -->
+	</fx:Declarations>
+	
+	<fx:Script>
+		<![CDATA[
+			import com.gsccs.tobacco.components.CJWTView;
+			import com.gsccs.tobacco.components.DTJJView;
+			import com.gsccs.tobacco.components.FlfgView;
+			import com.gsccs.tobacco.components.GKGSView;
+			import com.gsccs.tobacco.components.HLBJView;
+			import com.gsccs.tobacco.components.MainView;
+			import com.gsccs.tobacco.components.QYWHView;
+			import com.gsccs.tobacco.components.XQJJView;
+			import com.gsccs.tobacco.components.YXFWView;
+			import com.gsccs.tobacco.events.BackMainEvent;
+			
+			//import components.events.MyScrollBaseAs;
+			import com.gsccs.tobacco.events.BackMainEvent;
+			import com.gsccs.tobacco.events.MenuClickEvent;
+			import com.gsccs.tobacco.skins.HeaderbarSkin;
+			
+			import mx.collections.ArrayCollection;
+			import mx.containers.Panel;
+			import mx.controls.Alert;
+			import mx.core.FlexGlobals;
+			import mx.core.UIComponent;
+			import mx.events.FlexEvent;
+			import mx.events.ResizeEvent;
+			
+			import spark.components.BorderContainer;
+			import spark.components.NavigatorContent;
+			import spark.components.Panel;
+			import spark.components.Scroller;
+			import spark.components.TitleWindow;
+			
+			
+			
+			protected function main_creationCompleteHandler(event:FlexEvent):void
+			{
+				var view:Group = new MainView();
+				//var foot:Group = new Foot();
+				view.addEventListener(MenuClickEvent.MENU_CLICK,menuClickHandler);
+				main_group.addElement(view);
+				//main_group.addElement(foot);
+			}
+			
+			
+			protected function returnMainHandler(event:BackMainEvent):void{
+				main_group.removeAllElements();
+				var view:Group = new MainView();
+				view.addEventListener(MenuClickEvent.MENU_CLICK,menuClickHandler);
+				main_group.addElement(view);
+			}
+			
+			
+			protected function menuClickHandler(event:MenuClickEvent):void{
+				var obj:Object = event.data;
+				if(obj)
+				{
+					main_group.removeAllElements();
+					var targetId:String = obj.id;
+					
+					if (targetId=="dtjj"){
+						var view_dtjj:mx.containers.Panel = new XQJJView();
+						view_dtjj.addEventListener(BackMainEvent.BACK_MAIN,returnMainHandler);
+						view_dtjj.visible = false;
+						main_group.addElement(view_dtjj);
+					}
+					
+					if (targetId=="xqjj"){
+						var view_xqjj:mx.containers.Panel = new DTJJView();
+						view_xqjj.addEventListener(BackMainEvent.BACK_MAIN,returnMainHandler);
+						
+						//view_xqjj.addEventListener(MyScrollBaseAs.MYSCROLL_BASEAS,onNewsCLickHandler);
+						view_xqjj.visible = false;
+						main_group.addElement(view_xqjj);
+					}
+					
+					
+					if (targetId=="hlbj"){
+						var view_hlbj:mx.containers.Panel = new HLBJView();
+						view_hlbj.addEventListener(BackMainEvent.BACK_MAIN,returnMainHandler);
+						view_hlbj.visible = false;
+						main_group.addElement(view_hlbj);
+					}
+					
+					
+					if (targetId=="gkgs"){
+						var view_gkgs:mx.containers.Panel = new GKGSView();
+						view_gkgs.addEventListener(BackMainEvent.BACK_MAIN,returnMainHandler);
+						view_gkgs.visible = false;
+						main_group.addElement(view_gkgs);
+					}
+					
+					
+					if (targetId=="flfg"){
+						var view_flfg:mx.containers.Panel = new FlfgView();
+						view_flfg.addEventListener(BackMainEvent.BACK_MAIN,returnMainHandler);
+						view_flfg.visible = false;
+						main_group.addElement(view_flfg);
+					}
+					
+					
+					if (targetId=="yxfw"){
+						var view_yxfw:mx.containers.Panel = new YXFWView();
+						view_yxfw.addEventListener(BackMainEvent.BACK_MAIN,returnMainHandler);
+						view_yxfw.visible = false;
+						main_group.addElement(view_yxfw);
+					}
+					
+					
+					if (targetId=="qywh"){
+						var view_qywh:mx.containers.Panel = new QYWHView();
+						view_qywh.addEventListener(BackMainEvent.BACK_MAIN,returnMainHandler);
+						view_qywh.visible = false;
+						main_group.addElement(view_qywh);
+					}
+					
+					
+					if (targetId=="cjwt"){
+						var view_cjwt:mx.containers.Panel = new CJWTView();
+						view_cjwt.addEventListener(BackMainEvent.BACK_MAIN,returnMainHandler);
+						view_cjwt.visible = false;
+						main_group.addElement(view_cjwt);
+					}
+				}
+			}
+			
+		]]>
+	</fx:Script>
+	
+	
+	<s:Rect x="0" y="0" height="100%" width="100%"> 
+		<s:fill> 
+			<s:BitmapFill source="@Embed('assets/images/ycback.jpg')"/> 
+		</s:fill> 
+	</s:Rect> 
+	
+	
+	<s:VGroup id="main_group" width="100%" height="100%" gap="0">
+		
+	</s:VGroup>
+	
+</s:Group>

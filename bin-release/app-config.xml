@@ -1,0 +1,35 @@
+﻿<?xml version="1.0"?>
+<configuration>
+
+	<!--企业文化-->
+	<qywh source="assets/qywh/QQ截图20150517211834.jpg" title="" describe=""/>
+	<qywh source="assets/qywh/QQ截图20150517211834.jpg" title="" describe=""/>
+	<qywh source="assets/qywh/QQ截图20150517211834.jpg" title="" describe=""/>
+	
+	
+	<!--法律法规-->
+	<flfg id="flfg_1" title="烟草专卖法" source="assets/flfg/1.txt"/>
+	<flfg id="flfg_2" title="烟草专卖法实施条例" source="assets/flfg/2.txt"/>
+	<flfg id="flfg_3" title="烟草专卖许可证管理办法" source="assets/flfg/2.txt"/>
+	<flfg id="flfg_4" title="烟草专卖品准运证管理办法" source="assets/flfg/2.txt"/>
+	<flfg id="flfg_5" title="烟草专卖行政处罚程序规定" source="assets/flfg/2.txt"/>
+	
+	
+	
+	<!--营销服务-->
+	<yxfw id="flfg_1" title="现代终端简介" source="assets/flfg/1.txt"/>
+	<yxfw id="flfg_1" title="零售客户总量浮动管理办法" source="assets/flfg/1.txt"/>
+	<yxfw id="flfg_1" title="零售客户分类" source="assets/flfg/1.txt"/>
+	<yxfw id="flfg_1" title="新商盟订货流程" source="assets/flfg/1.txt"/>
+	<yxfw id="flfg_1" title="零售客户需求提报" source="assets/flfg/1.txt"/>
+	<yxfw id="flfg_1" title="卷烟配送服务" source="assets/flfg/1.txt"/>
+	<yxfw id="flfg_1" title="行业重点品牌和低焦油品牌名单" source="assets/flfg/1.txt"/>
+	<yxfw id="flfg_1" title="卷烟经营小贴士" source="assets/flfg/1.txt"/>
+	<yxfw id="flfg_1" title="卷烟价格目录" source="assets/flfg/1.txt"/>
+	
+	卷烟价格目录
+	<!--卷烟价格目录 -->
+	<jyml id="flfg_1" corptitle="湖南中烟" spectitle="白沙（精品二代）" barcode="6901028191111" grade="三" cprice="88" pprice="100" image="assets/qywh/QQ截图20150517211834.jpg"/>
+	<jyml id="flfg_2" corptitle="湖南中烟" spectitle="白沙（新精品）" barcode="6901028196697" grade="三" cprice="72" pprice="80" image="assets/qywh/QQ截图20150517211834.jpg"/>
+ 	
+</configuration>

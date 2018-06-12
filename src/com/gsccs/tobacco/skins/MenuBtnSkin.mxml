@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+		xmlns:s="library://ns.adobe.com/flex/spark"
+		creationComplete="init()"
+		alpha.disabled=".5" xmlns:mx="library://ns.adobe.com/flex/mx">
+	<fx:Metadata>
+		[HostComponent("spark.components.Button")]
+	</fx:Metadata>
+	<fx:Script>
+		<![CDATA[
+			import com.gsccs.tobacco.components.DTJJBtn;
+			
+			import mx.controls.Alert;
+			
+			protected function init():void
+			{
+				//为传入的图片路径
+				if (this.parent as  DTJJBtn){
+					//img.source=   CjwtBtn (this.parent).imageURL ;
+					//img.width = CjwtBtn (this.parent).imgwidth;
+					//img.height = CjwtBtn (this.parent).imgheight; 
+					label.text = DTJJBtn (this.parent).label;
+				}
+			}
+		]]>
+	</fx:Script>
+	<!-- 按钮的四种状态states -->
+	<s:states>
+		<s:State name="up"/>
+		<s:State name="over"/>
+		<s:State name="down"/>
+		<s:State name="disabled"/>
+	</s:states>
+	
+	
+	<s:Graphic>
+		<s:BitmapImage source.up="@Embed('assets/images/menu-but.png')"
+					   source.over="@Embed('assets/images/menu-buted.png')"
+					   source.down="@Embed('assets/images/menu-buted.png')"
+					   width="150" height="150"/>
+		
+	</s:Graphic>
+	
+	
+	<!--按钮下方显示文字-->
+	<s:Label id="label" width="150" height="150" 
+			 textAlign="center"
+			 verticalAlign="middle"
+			 maxDisplayedLines="5"  
+			 fontSize="20"
+			 fontWeight="bold"
+			color="#F0AA1E"/>
+	
+</s:Skin>
